@@ -6,7 +6,6 @@ run --mount=type=cache,target=/root/.cache/pip \
 
 FROM python:3.11-slim
 WORKDIR /backend
-COPY --from=builder /venv /venv
 ENV PATH="/venv/bin:$PATH"
 
 COPY . .
