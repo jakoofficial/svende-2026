@@ -1,27 +1,54 @@
 <script>
-    
+  const btn_login = document.getElementById("login_btn");
+  const login_form = document.getElementById("login-form");
+  const btn_register = document.getElementById("register_btn");
+  const register_form = document.getElementById("register-form");
+
+  //Login
+  btn_login.addEventListener("click", () => {
+    login_form.classList.toggle("log_close");
+    register_form.classList.toggle("reg_close");
+  });
+  //Register
+  btn_register.addEventListener("click", () => {
+    register_form.classList.toggle("reg_close");
+    login_form.classList.toggle("log_close");
+  });
 </script>
 
 <div class="content" id="login-page">
-    <div id="login-form">
-
-    </div>
-    <div id="register-form"></div>
+  <div id="login-form"></div>
+  <div id="register-form" class="reg_close"></div>
+  <button id="login_btn">Log in</button>
+  <button id="register_btn">Register</button>
 </div>
 
 <style>
-    #login-page{
-        width:25vw;
-        height:40vh;
-        margin: auto;
-        transform: translateY(25vh);
-        background-color: rgb(70, 96, 119);
-        #login-form{
-            
-        }
-
-        #register-form{
-
+  #login-page {
+    width: 25vw;
+    height: 40vh;
+    margin: auto;
+    transform: translateY(25vh);
+    background-color: rgb(70, 96, 119);
+    #login-form {
+        background-color: black;
+        width: 100%;
+        height: 90%;
+        &.log_close{
+            visibility: collapse;
+            display: none;
         }
     }
+
+    #register-form {
+        background-color: rgb(185, 81, 81);
+        width: 100%;
+        height: 90%;
+        &.reg_close{
+            display: none;
+            visibility: collapse;
+        }
+    }
+    
+  }
 </style>
