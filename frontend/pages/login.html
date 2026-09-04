@@ -5,11 +5,11 @@
   const register_form = document.getElementById("register-form");
 
   function Goto(form) {
-    if (form === "login"){
+    if (form === "login") {
       login_form.classList.remove("CloseForm");
       register_form.classList.add("CloseForm");
     }
-    if (form === "register"){
+    if (form === "register") {
       login_form.classList.add("CloseForm");
       register_form.classList.remove("CloseForm");
     }
@@ -25,15 +25,23 @@
     // btn_register for creating account
     Goto("login");
   });
-
 </script>
 
 <div class="content" id="login-page">
-  <div id="login-form" class="OpenForm">
+  <div id="login-form" class="OpenForm CloseForm">
+    <div id="form-inputs">
+      <input type="text" />
+      <input type="text" />
+    </div>
     <button id="login_btn">Log in</button>
     <button id="gotoRegister">Create account</button>
   </div>
-  <div id="register-form" class="OpenForm CloseForm">
+  <div id="register-form" class="OpenForm">
+    <div id="form-inputs">
+      <input type="text" />
+      <input type="text" />
+      <input type="text" />
+    </div>
     <button id="create_account">Create account</button>
     <button id="gotoLogin">Already have an account</button>
   </div>
@@ -46,20 +54,21 @@
     margin: auto;
     transform: translateY(25vh);
     background-color: rgb(70, 96, 119);
+    border-radius: 10px;
+    padding: 10px;
     button {
       display: inline-flex;
       cursor: pointer;
       margin: auto;
-      &:last-of-type{
+      &:last-of-type {
         background-color: transparent;
         border: none;
       }
     }
 
     #login-form {
-      background-color: rgb(136, 107, 107);
     }
-    .OpenForm{
+    .OpenForm {
       width: 100%;
       height: 100%;
     }
@@ -67,9 +76,8 @@
       visibility: collapse;
       display: none;
     }
-    
+
     #register-form {
-      background-color: rgb(185, 81, 81);
     }
   }
 </style>
