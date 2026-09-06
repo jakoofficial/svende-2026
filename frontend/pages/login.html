@@ -28,19 +28,36 @@
 </script>
 
 <div class="content" id="login-page">
-  <div id="login-form" class="OpenForm">
+  <div id="login-form" class="OpenForm CloseForm">
+    <h1>Log in</h1>
     <div id="form-inputs">
-      <input type="text" />
-      <input type="text" />
+      <div>
+        <p>Username</p>
+        <input type="text" />
+      </div>
+      <div>
+        <p>Password</p>
+        <input type="password" />
+      </div>
     </div>
     <button id="login_btn">Log in</button>
     <button id="gotoRegister">Create account</button>
   </div>
-  <div id="register-form" class="OpenForm CloseForm">
+  <div id="register-form" class="OpenForm">
     <div id="form-inputs">
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
+      <h1>Register</h1>
+      <div>
+        <p>Username</p>
+        <input type="text" />
+      </div>
+      <div>
+        <p>Password</p>
+        <input type="password" />
+      </div>
+      <div>
+        <p>Confirm password</p>
+        <input type="password" />
+      </div>
     </div>
     <button id="create_account">Create account</button>
     <button id="gotoLogin">Already have an account</button>
@@ -50,31 +67,64 @@
 <style>
   #login-page {
     width: 25vw;
-    height: 40vh;
+    min-height: 25vh;
     margin: auto;
     transform: translateY(25vh);
     background-color: rgb(70, 96, 119);
     border-radius: 10px;
     padding: 10px;
+    color: black;
 
-    
-    
+    h1{
+      margin: 0 0 5px 0;
+    }
+
     button {
       display: inline-flex;
       cursor: pointer;
-      margin: auto;
+      margin: 15px auto;
+      min-width: 100px;
+      height: 30px;
+      font-size: 16px;
+      justify-content: center;
+      align-items: center;
       &:last-of-type {
         background-color: transparent;
         border: none;
+        &:hover{
+          text-decoration: underline;
+        }
       }
     }
-    
+
+    input {
+      border: none;
+      border-radius: 5px;
+      height: 30px;
+      width: 100%;
+      display: block;
+      font-size: 16px;
+      margin: auto;
+      background-color: rgb(209, 209, 209);
+    }
+
     #login-form {
       width: 75%;
       margin: auto;
-      
-      #form-inputs{
-        background-color: aliceblue;
+    }
+    #register-form {
+      width: 75%;
+      margin: auto;
+    }
+    #form-inputs {
+      /* margin-bottom: 25px; */
+      div {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        p {
+          margin: 0px;
+        }
       }
     }
     .OpenForm {
@@ -86,7 +136,5 @@
       display: none;
     }
 
-    #register-form {
-    }
   }
 </style>
