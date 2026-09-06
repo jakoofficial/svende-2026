@@ -28,7 +28,7 @@
 </script>
 
 <div class="content" id="login-page">
-  <div id="login-form" class="OpenForm CloseForm">
+  <div id="login-form" class="OpenForm">
     <div id="form-inputs">
       <input type="text" />
       <input type="text" />
@@ -36,7 +36,7 @@
     <button id="login_btn">Log in</button>
     <button id="gotoRegister">Create account</button>
   </div>
-  <div id="register-form" class="OpenForm">
+  <div id="register-form" class="OpenForm CloseForm">
     <div id="form-inputs">
       <input type="text" />
       <input type="text" />
@@ -56,6 +56,9 @@
     background-color: rgb(70, 96, 119);
     border-radius: 10px;
     padding: 10px;
+
+    
+    
     button {
       display: inline-flex;
       cursor: pointer;
@@ -65,8 +68,14 @@
         border: none;
       }
     }
-
+    
     #login-form {
+      width: 75%;
+      margin: auto;
+      
+      #form-inputs{
+        background-color: aliceblue;
+      }
     }
     .OpenForm {
       width: 100%;
