@@ -28,6 +28,7 @@ class budgets(Base):
 
 class userBudget(Base):
     __tablename__ = "userBudget"
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     userID: Mapped[int] = mapped_column(ForeignKey("users.userID"))
     budgetID: Mapped[int] = mapped_column(ForeignKey("budgets.budgetID"))
 
