@@ -6,34 +6,42 @@ services:
       - "3316:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=admin
-      - MYSQL_DATABASE=mysql
+      - MYSQL_DATABASE=tracky
     volumes:
-      - tracky_db:/var/lib/mysql
+      - tracky_data:/var/lib/mysql
     networks:
       - app-network
     restart: unless-stopped
+    healthcheck: 
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 10s
+      retries: 20
 
   backend:
-    build:
-      ./backend/.
+    build: ./backend/.
     container_name: tracky_backend
     ports:
       - "8010:8080"
     networks:
       - app-network
     restart: unless-stopped
-  
+    depends_on:
+      mysql:
+        condition: service_healthy
+
   frontend:
-    build:
-      ./frontend/
+    build: ./frontend/
     container_name: tracky
     ports:
       - "3000:80"
     networks:
       - app-network
     restart: unless-stopped
-
+    depends_on:
+      backend:
+        condition: service_started
 networks:
   app-network:
 volumes:
-  tracky_db:
+  tracky_data:
