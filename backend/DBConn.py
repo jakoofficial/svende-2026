@@ -7,30 +7,40 @@ engine = create_engine("mysql+pymysql://root:admin@mysql:3306/tracky", echo=True
 class Base(DeclarativeBase):
     pass
 
-# Table
-class test(Base):
-    __tablename__ = "test"
-
-    id: Mapped[int] = mapped_column(primary_key=True)
-    name: Mapped[str] = mapped_column(String(30))
-
+# Table creations
 class users(Base):
-    __tablename__ = "users"
+    __tablename__ = "Users"
 
     userID: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     username: Mapped[str] = mapped_column(String(60))
     password: Mapped[str] = mapped_column(String(60))
+    budgets: Mapped[list["budgets"]] = relationship(back_populates="creator")
 
 class budgets(Base):
-    __tablename__ = "budgets"
+    __tablename__ = "Budgets"
 
     budgetID: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    budgetName: Mapped[str] = mapped_column(String, nullable=False)
+    creatorID: Mapped[str] = mapped_column(ForeignKey("Users.userID"))
+    creator: Mapped["users"] = relationship(back_populates="budgets")
+    created: Mapped[str] = mapped_column(String, nullable=False)
+    lastUpdated: Mapped[str] = mapped_column(String, nullable=False)
 
-class userBudget(Base):
-    __tablename__ = "userBudget"
-    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
-    userID: Mapped[int] = mapped_column(ForeignKey("users.userID"))
-    budgetID: Mapped[int] = mapped_column(ForeignKey("budgets.budgetID"))
+
+class budgetItems(Base):
+    __tablename__ = "BudgetItems"
+
+
+class userGroups(Base):
+    __tablename__ = "UserGroups"
+
+
+class groups(Base):
+    __tablename__ = "BudgetGroups"
+
+
+class sessionLog(Base):
+    __tablename__ = "SessionLog"
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 

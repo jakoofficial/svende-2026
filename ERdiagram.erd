@@ -1,20 +1,20 @@
 {
     "documentName": "ER diagram svende 2026",
-    "lastUpdatedAt": "2026-09-07T07:37:01.505Z",
+    "lastUpdatedAt": "2026-09-07T08:31:00.058Z",
     "tableViewModels": [
         {
             "tableModel": {
                 "tableModelId": "56f4beb4-4312-49e5-a607-601059a6178d",
-                "physicalName": "users",
-                "logicalName": "users",
+                "physicalName": "Users",
+                "logicalName": "Users",
                 "columnModelIds": [
                     "899f97be-7e97-4e48-9ca1-f51f610ea10f",
                     "907a5e37-788d-439a-8bc3-2a6f5b46b4a0",
                     "a2c71502-201a-46bd-b6e2-e08a6824c555"
                 ]
             },
-            "top": -70,
-            "left": -349,
+            "top": -267,
+            "left": -621,
             "headerBackgroundColor": {
                 "red": 189,
                 "green": 189,
@@ -25,20 +25,24 @@
                 "green": 0,
                 "blue": 0
             },
-            "createdAt": "2026-09-07T07:37:01.504Z"
+            "createdAt": "2026-09-07T08:14:36.344Z"
         },
         {
             "tableModel": {
                 "tableModelId": "d88f7cb9-e252-41b9-981e-fd54e5030680",
-                "physicalName": "user_budget",
-                "logicalName": "user_budget",
+                "physicalName": "BudgetItems",
+                "logicalName": "BudgetItems",
                 "columnModelIds": [
-                    "83bb5632-b3e3-47b9-a641-cfd8a449469c",
-                    "2e4c283f-66f1-4105-bd92-020cdc30c393"
+                    "dbb7749e-9174-42ee-9d01-5bcab460a401",
+                    "8865ebaf-e317-457c-8275-a5866e453586",
+                    "5ab01525-f005-4cae-b731-7958faf188a9",
+                    "b63b2826-ce06-4420-b359-2b418086d403",
+                    "583741f7-a57f-4907-9ae6-e44dff3ab644",
+                    "405d2b43-2e2e-41d0-a8c4-2c13fc8da16d"
                 ]
             },
-            "top": -66,
-            "left": 221,
+            "top": -121.74999999999999,
+            "left": -1171.5900000000001,
             "headerBackgroundColor": {
                 "red": 189,
                 "green": 189,
@@ -49,19 +53,23 @@
                 "green": 0,
                 "blue": 0
             },
-            "createdAt": "2026-09-07T07:28:44.957Z"
+            "createdAt": "2026-09-07T08:19:10.413Z"
         },
         {
             "tableModel": {
                 "tableModelId": "f5d063c4-95f5-4f32-9bf5-a8c9ff7a68d9",
-                "physicalName": "budgets",
-                "logicalName": "budgets",
+                "physicalName": "Budgets",
+                "logicalName": "Budgets",
                 "columnModelIds": [
-                    "139811b7-cf1f-4e0d-b7dc-16cd6ebebaad"
+                    "139811b7-cf1f-4e0d-b7dc-16cd6ebebaad",
+                    "e40d375a-5d4a-4d07-8593-1cb0138f98f5",
+                    "15b00d98-aeec-4ba4-9482-8d17e82a0b51",
+                    "ef0e3a5d-91f8-4ed8-8f06-dd9ec761fcb7",
+                    "4ff0190d-ab0b-40ed-bb94-4a4aa8fc2738"
                 ]
             },
-            "top": 311,
-            "left": 176,
+            "top": -364.01,
+            "left": -1136.96,
             "headerBackgroundColor": {
                 "red": 189,
                 "green": 189,
@@ -72,11 +80,100 @@
                 "green": 0,
                 "blue": 0
             },
-            "createdAt": "2026-09-07T07:30:38.865Z"
+            "createdAt": "2026-09-07T08:16:14.405Z"
+        },
+        {
+            "tableModel": {
+                "tableModelId": "58a9660a-2c5e-454d-8efa-574bb9bec0fd",
+                "physicalName": "BudgetGroups",
+                "logicalName": "BudgetGroups",
+                "columnModelIds": [
+                    "112e7474-faf3-4f43-9816-90c8f62a02ed",
+                    "167d0345-927b-4e7a-bfac-0292a5435669"
+                ]
+            },
+            "top": 87.41000000000003,
+            "left": -612.5699999999999,
+            "headerBackgroundColor": {
+                "red": 189,
+                "green": 189,
+                "blue": 189
+            },
+            "headerForegroundColor": {
+                "red": 0,
+                "green": 0,
+                "blue": 0
+            },
+            "createdAt": "2026-09-07T08:20:18.588Z"
+        },
+        {
+            "tableModel": {
+                "tableModelId": "41d45872-dc81-4f98-9ad7-609c20ef7397",
+                "physicalName": "UserGroups",
+                "logicalName": "UserGroups",
+                "columnModelIds": [
+                    "101e67e0-1a6a-4344-a381-f9f25a687743",
+                    "ebbc461d-9e69-4623-871d-b452ab97d999",
+                    "8e6679ac-ae5a-40f3-ba7b-0eb8a73fbffa"
+                ]
+            },
+            "top": -103.60000000000001,
+            "left": -558.7,
+            "headerBackgroundColor": {
+                "red": 189,
+                "green": 189,
+                "blue": 189
+            },
+            "headerForegroundColor": {
+                "red": 0,
+                "green": 0,
+                "blue": 0
+            },
+            "createdAt": "2026-09-07T08:21:05.970Z"
+        },
+        {
+            "tableModel": {
+                "tableModelId": "1d443242-5516-4135-bc90-27854c43de1c",
+                "physicalName": "SessionLog",
+                "logicalName": "SessionLog",
+                "columnModelIds": [
+                    "649bb000-819c-4b9e-af7c-3d70912bade5",
+                    "d039f843-4d75-4ceb-88fc-412637ea5079",
+                    "600b5c59-28d5-4ec3-bfba-e233398666de",
+                    "71a414e0-a58d-473b-9381-ae5bc28a7076"
+                ]
+            },
+            "top": -520.01,
+            "left": -619.76,
+            "headerBackgroundColor": {
+                "red": 189,
+                "green": 189,
+                "blue": 189
+            },
+            "headerForegroundColor": {
+                "red": 0,
+                "green": 0,
+                "blue": 0
+            },
+            "createdAt": "2026-09-07T08:22:01.741Z"
         }
     ],
     "columnGroupModels": [],
     "columnModels": [
+        {
+            "columnModelId": "101e67e0-1a6a-4344-a381-f9f25a687743",
+            "columnShareModelId": "9e329c89-4193-443f-bbd9-2e1e05f5b364",
+            "primaryKey": true,
+            "notNull": true,
+            "autoIncrement": true
+        },
+        {
+            "columnModelId": "112e7474-faf3-4f43-9816-90c8f62a02ed",
+            "columnShareModelId": "23263943-c761-4190-b63e-298497ae200e",
+            "primaryKey": true,
+            "notNull": true,
+            "autoIncrement": true
+        },
         {
             "columnModelId": "139811b7-cf1f-4e0d-b7dc-16cd6ebebaad",
             "columnShareModelId": "0047e884-fad2-4860-8782-ba40e39ddfb7",
@@ -86,13 +183,53 @@
             "defaultValue": "0"
         },
         {
-            "columnModelId": "2e4c283f-66f1-4105-bd92-020cdc30c393",
-            "columnShareModelId": "92f45601-9cfd-4786-835d-66055bbb029b",
+            "columnModelId": "15b00d98-aeec-4ba4-9482-8d17e82a0b51",
+            "columnShareModelId": "da00b566-5949-449b-8202-6df79af49ec1",
             "notNull": true
         },
         {
-            "columnModelId": "83bb5632-b3e3-47b9-a641-cfd8a449469c",
-            "columnShareModelId": "1294f957-9f46-4bcc-b4d4-87df102c6f73",
+            "columnModelId": "167d0345-927b-4e7a-bfac-0292a5435669",
+            "columnShareModelId": "632a92d6-d69c-479f-80e7-d1c917770e2e",
+            "notNull": true
+        },
+        {
+            "columnModelId": "405d2b43-2e2e-41d0-a8c4-2c13fc8da16d",
+            "columnShareModelId": "ca5e3c0b-6884-4e0e-a7f3-f3b3acfa5911"
+        },
+        {
+            "columnModelId": "4ff0190d-ab0b-40ed-bb94-4a4aa8fc2738",
+            "columnShareModelId": "904211d0-df69-462f-abad-11833396a957",
+            "notNull": true
+        },
+        {
+            "columnModelId": "583741f7-a57f-4907-9ae6-e44dff3ab644",
+            "columnShareModelId": "bc964cb8-f865-4090-a6f5-b71877e5fd51"
+        },
+        {
+            "columnModelId": "5ab01525-f005-4cae-b731-7958faf188a9",
+            "columnShareModelId": "c84a712d-c375-493f-8431-54b8043063e9",
+            "notNull": true
+        },
+        {
+            "columnModelId": "600b5c59-28d5-4ec3-bfba-e233398666de",
+            "columnShareModelId": "2f92054f-489b-41c6-9097-8f106ce3c44d",
+            "notNull": true
+        },
+        {
+            "columnModelId": "649bb000-819c-4b9e-af7c-3d70912bade5",
+            "columnShareModelId": "f81c80d9-1de9-4070-8bdd-9011f68b6517",
+            "primaryKey": true,
+            "notNull": true,
+            "autoIncrement": true
+        },
+        {
+            "columnModelId": "71a414e0-a58d-473b-9381-ae5bc28a7076",
+            "columnShareModelId": "bdcb2c1b-73e2-410b-97fd-84fe52f67ffe",
+            "notNull": true
+        },
+        {
+            "columnModelId": "8865ebaf-e317-457c-8275-a5866e453586",
+            "columnShareModelId": "36a0f164-0a35-44dd-b66f-e3818cc9e2a3",
             "notNull": true
         },
         {
@@ -104,6 +241,11 @@
             "defaultValue": "0"
         },
         {
+            "columnModelId": "8e6679ac-ae5a-40f3-ba7b-0eb8a73fbffa",
+            "columnShareModelId": "50d47a93-acc3-4a7a-a932-f06997f30219",
+            "notNull": true
+        },
+        {
             "columnModelId": "907a5e37-788d-439a-8bc3-2a6f5b46b4a0",
             "columnShareModelId": "b2a84c45-be22-4bd1-8048-eed9421ab332",
             "notNull": true,
@@ -112,6 +254,38 @@
         {
             "columnModelId": "a2c71502-201a-46bd-b6e2-e08a6824c555",
             "columnShareModelId": "90320c5a-2cb8-43f3-8cf9-797e15e4fc45",
+            "notNull": true
+        },
+        {
+            "columnModelId": "b63b2826-ce06-4420-b359-2b418086d403",
+            "columnShareModelId": "93406d77-e711-4e50-89af-7ba87a8edf5b",
+            "notNull": true
+        },
+        {
+            "columnModelId": "d039f843-4d75-4ceb-88fc-412637ea5079",
+            "columnShareModelId": "37f653ae-9ae6-4f94-b859-8949a77a4769",
+            "notNull": true
+        },
+        {
+            "columnModelId": "dbb7749e-9174-42ee-9d01-5bcab460a401",
+            "columnShareModelId": "93dc58ab-9c3a-4129-8c55-43bf0c6cd1f5",
+            "primaryKey": true,
+            "notNull": true,
+            "autoIncrement": true
+        },
+        {
+            "columnModelId": "e40d375a-5d4a-4d07-8593-1cb0138f98f5",
+            "columnShareModelId": "1d6e4cf7-cd49-433a-a718-c573c27555c4",
+            "notNull": true
+        },
+        {
+            "columnModelId": "ebbc461d-9e69-4623-871d-b452ab97d999",
+            "columnShareModelId": "0cb23952-ecc4-4406-a43a-6f6cdd69a8a0",
+            "notNull": true
+        },
+        {
+            "columnModelId": "ef0e3a5d-91f8-4ed8-8f06-dd9ec761fcb7",
+            "columnShareModelId": "d04633e1-e3a1-478b-a082-825f9cd9f281",
             "notNull": true
         }
     ],
@@ -124,11 +298,116 @@
             "createdAt": "2026-09-07T07:30:26.357Z"
         },
         {
-            "columnShareModelId": "92f45601-9cfd-4786-835d-66055bbb029b",
+            "columnShareModelId": "36a0f164-0a35-44dd-b66f-e3818cc9e2a3",
             "physicalName": "budgetID",
             "logicalName": "budgetID",
             "columnTypeId": 15,
-            "createdAt": "2026-09-07T07:28:30.283Z"
+            "createdAt": "2026-09-07T08:16:55.607Z"
+        },
+        {
+            "columnShareModelId": "1d6e4cf7-cd49-433a-a718-c573c27555c4",
+            "physicalName": "budgetName",
+            "logicalName": "budgetName",
+            "columnTypeId": 322,
+            "createdAt": "2026-09-07T08:15:04.389Z"
+        },
+        {
+            "columnShareModelId": "2f92054f-489b-41c6-9097-8f106ce3c44d",
+            "physicalName": "created",
+            "logicalName": "created",
+            "columnTypeId": 112,
+            "createdAt": "2026-09-07T08:21:48.032Z"
+        },
+        {
+            "columnShareModelId": "d04633e1-e3a1-478b-a082-825f9cd9f281",
+            "physicalName": "created",
+            "logicalName": "created",
+            "columnTypeId": 112,
+            "createdAt": "2026-09-07T08:15:57.198Z"
+        },
+        {
+            "columnShareModelId": "da00b566-5949-449b-8202-6df79af49ec1",
+            "physicalName": "creatorID",
+            "logicalName": "creatorID",
+            "columnTypeId": 15,
+            "createdAt": "2026-09-07T08:15:36.125Z"
+        },
+        {
+            "columnShareModelId": "bdcb2c1b-73e2-410b-97fd-84fe52f67ffe",
+            "physicalName": "ends",
+            "logicalName": "ends",
+            "columnTypeId": 112,
+            "createdAt": "2026-09-07T08:21:58.836Z"
+        },
+        {
+            "columnShareModelId": "0cb23952-ecc4-4406-a43a-6f6cdd69a8a0",
+            "physicalName": "group",
+            "logicalName": "group",
+            "columnTypeId": 15,
+            "createdAt": "2026-09-07T08:20:52.423Z"
+        },
+        {
+            "columnShareModelId": "23263943-c761-4190-b63e-298497ae200e",
+            "physicalName": "groupID",
+            "logicalName": "groupID",
+            "columnTypeId": 15,
+            "createdAt": "2026-09-07T08:19:47.524Z"
+        },
+        {
+            "columnShareModelId": "632a92d6-d69c-479f-80e7-d1c917770e2e",
+            "physicalName": "groupName",
+            "logicalName": "groupName",
+            "columnTypeId": 322,
+            "createdAt": "2026-09-07T08:20:03.276Z"
+        },
+        {
+            "columnShareModelId": "9e329c89-4193-443f-bbd9-2e1e05f5b364",
+            "physicalName": "id",
+            "logicalName": "id",
+            "columnTypeId": 15,
+            "createdAt": "2026-09-07T08:20:39.404Z"
+        },
+        {
+            "columnShareModelId": "ca5e3c0b-6884-4e0e-a7f3-f3b3acfa5911",
+            "physicalName": "itemCategory",
+            "logicalName": "itemCategory",
+            "columnTypeId": 322,
+            "createdAt": "2026-09-07T08:19:06.380Z"
+        },
+        {
+            "columnShareModelId": "bc964cb8-f865-4090-a6f5-b71877e5fd51",
+            "physicalName": "itemDescription",
+            "logicalName": "itemDescription",
+            "columnTypeId": 325,
+            "createdAt": "2026-09-07T08:18:35.873Z"
+        },
+        {
+            "columnShareModelId": "93dc58ab-9c3a-4129-8c55-43bf0c6cd1f5",
+            "physicalName": "itemID",
+            "logicalName": "itemID",
+            "columnTypeId": 15,
+            "createdAt": "2026-09-07T08:17:37.837Z"
+        },
+        {
+            "columnShareModelId": "c84a712d-c375-493f-8431-54b8043063e9",
+            "physicalName": "itemName",
+            "logicalName": "itemName",
+            "columnTypeId": 322,
+            "createdAt": "2026-09-07T08:17:56.430Z"
+        },
+        {
+            "columnShareModelId": "93406d77-e711-4e50-89af-7ba87a8edf5b",
+            "physicalName": "itemValue",
+            "logicalName": "itemValue",
+            "columnTypeId": 31,
+            "createdAt": "2026-09-07T08:18:12.696Z"
+        },
+        {
+            "columnShareModelId": "904211d0-df69-462f-abad-11833396a957",
+            "physicalName": "lastUpdated",
+            "logicalName": "lastUpdated",
+            "columnTypeId": 112,
+            "createdAt": "2026-09-07T08:16:10.343Z"
         },
         {
             "columnShareModelId": "90320c5a-2cb8-43f3-8cf9-797e15e4fc45",
@@ -138,11 +417,25 @@
             "createdAt": "2026-09-07T07:37:00.594Z"
         },
         {
-            "columnShareModelId": "1294f957-9f46-4bcc-b4d4-87df102c6f73",
-            "physicalName": "userID",
-            "logicalName": "userID",
+            "columnShareModelId": "f81c80d9-1de9-4070-8bdd-9011f68b6517",
+            "physicalName": "sessionID",
+            "logicalName": "sessionID",
             "columnTypeId": 15,
-            "createdAt": "2026-09-07T07:28:16.099Z"
+            "createdAt": "2026-09-07T08:21:25.004Z"
+        },
+        {
+            "columnShareModelId": "37f653ae-9ae6-4f94-b859-8949a77a4769",
+            "physicalName": "user",
+            "logicalName": "user",
+            "columnTypeId": 15,
+            "createdAt": "2026-09-07T08:21:37.579Z"
+        },
+        {
+            "columnShareModelId": "50d47a93-acc3-4a7a-a932-f06997f30219",
+            "physicalName": "user",
+            "logicalName": "user",
+            "columnTypeId": 15,
+            "createdAt": "2026-09-07T08:21:03.353Z"
         },
         {
             "columnShareModelId": "5eef136f-8582-449e-ac02-a515a190e189",
@@ -162,36 +455,313 @@
     "relationViewModels": [
         {
             "relationModel": {
-                "relationModelId": "904ccabe-ad85-4d83-aed3-ecb05b123ba4",
-                "parentTableModelId": "56f4beb4-4312-49e5-a607-601059a6178d",
+                "relationModelId": "2f796bcf-605e-4607-8a83-d636b768b979",
+                "relationName": "budget",
+                "parentTableModelId": "f5d063c4-95f5-4f32-9bf5-a8c9ff7a68d9",
                 "parentCardinality": "1",
                 "childTableModelId": "d88f7cb9-e252-41b9-981e-fd54e5030680",
                 "childCardinality": "1",
                 "relationPairs": [
                     {
-                        "parentColumnModelId": "899f97be-7e97-4e48-9ca1-f51f610ea10f",
-                        "childColumnModelId": "83bb5632-b3e3-47b9-a641-cfd8a449469c"
+                        "parentColumnModelId": "139811b7-cf1f-4e0d-b7dc-16cd6ebebaad",
+                        "childColumnModelId": "8865ebaf-e317-457c-8275-a5866e453586"
                     }
                 ],
-                "onUpdateAction": "NO ACTION",
-                "onDeleteAction": "NO ACTION"
+                "onUpdateAction": "RESTRICT",
+                "onDeleteAction": "RESTRICT"
             },
             "lineViewModel": {
                 "strokeWidth": 1,
-                "edges": [
+                "edges": [],
+                "orthogonalLines": [
                     {
-                        "x": 142,
-                        "y": -15
+                        "direction": "horizontal",
+                        "position": -307.1
+                    },
+                    {
+                        "direction": "vertical",
+                        "position": -1220.21
+                    },
+                    {
+                        "direction": "horizontal",
+                        "position": -39.02
                     }
                 ],
-                "orthogonalLines": [],
                 "color": {
                     "red": 0,
                     "green": 0,
                     "blue": 0
                 }
             },
-            "createdAt": "2026-09-07T07:28:49.113Z"
+            "labelViewModel": {
+                "label": "budget",
+                "position": {
+                    "segment": -1,
+                    "fraction": 0,
+                    "offsetX": 0,
+                    "offsetY": 0
+                },
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                },
+                "style": {
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "fontSize": 10
+                }
+            },
+            "createdAt": "2026-09-07T08:25:11.883Z"
+        },
+        {
+            "relationModel": {
+                "relationModelId": "33ee7437-eb5b-4dfe-9bb2-d8174b6a57df",
+                "relationName": "creator",
+                "parentTableModelId": "56f4beb4-4312-49e5-a607-601059a6178d",
+                "parentCardinality": "1",
+                "childTableModelId": "f5d063c4-95f5-4f32-9bf5-a8c9ff7a68d9",
+                "childCardinality": "1",
+                "relationPairs": [
+                    {
+                        "parentColumnModelId": "899f97be-7e97-4e48-9ca1-f51f610ea10f",
+                        "childColumnModelId": "15b00d98-aeec-4ba4-9482-8d17e82a0b51"
+                    }
+                ],
+                "onUpdateAction": "RESTRICT",
+                "onDeleteAction": "RESTRICT"
+            },
+            "lineViewModel": {
+                "strokeWidth": 1,
+                "edges": [],
+                "orthogonalLines": [
+                    {
+                        "direction": "horizontal",
+                        "position": -213
+                    },
+                    {
+                        "direction": "vertical",
+                        "position": -672.23
+                    },
+                    {
+                        "direction": "horizontal",
+                        "position": -240.97
+                    }
+                ],
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                }
+            },
+            "labelViewModel": {
+                "label": "creator",
+                "position": {
+                    "segment": -1,
+                    "fraction": 0,
+                    "offsetX": 0,
+                    "offsetY": 0
+                },
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                },
+                "style": {
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "fontSize": 10
+                }
+            },
+            "createdAt": "2026-09-07T08:24:51.896Z"
+        },
+        {
+            "relationModel": {
+                "relationModelId": "4cb08932-b7ab-45e7-894d-db24406a291b",
+                "relationName": "group_group",
+                "parentTableModelId": "58a9660a-2c5e-454d-8efa-574bb9bec0fd",
+                "parentCardinality": "1",
+                "childTableModelId": "41d45872-dc81-4f98-9ad7-609c20ef7397",
+                "childCardinality": "1",
+                "relationPairs": [
+                    {
+                        "parentColumnModelId": "112e7474-faf3-4f43-9816-90c8f62a02ed",
+                        "childColumnModelId": "ebbc461d-9e69-4623-871d-b452ab97d999"
+                    }
+                ],
+                "onUpdateAction": "RESTRICT",
+                "onDeleteAction": "RESTRICT"
+            },
+            "lineViewModel": {
+                "strokeWidth": 1,
+                "edges": [],
+                "orthogonalLines": [
+                    {
+                        "direction": "horizontal",
+                        "position": 142.32034576277846
+                    },
+                    {
+                        "direction": "vertical",
+                        "position": -184.48
+                    },
+                    {
+                        "direction": "horizontal",
+                        "position": -55.56
+                    }
+                ],
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                }
+            },
+            "labelViewModel": {
+                "label": "group_group",
+                "position": {
+                    "segment": -1,
+                    "fraction": 0,
+                    "offsetX": 0,
+                    "offsetY": 0
+                },
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                },
+                "style": {
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "fontSize": 10
+                }
+            },
+            "createdAt": "2026-09-07T08:24:12.048Z"
+        },
+        {
+            "relationModel": {
+                "relationModelId": "9c8893f8-96fc-4013-a29f-1ca5f860f44b",
+                "relationName": "user_group",
+                "parentTableModelId": "56f4beb4-4312-49e5-a607-601059a6178d",
+                "parentCardinality": "1",
+                "childTableModelId": "41d45872-dc81-4f98-9ad7-609c20ef7397",
+                "childCardinality": "1",
+                "relationPairs": [
+                    {
+                        "parentColumnModelId": "899f97be-7e97-4e48-9ca1-f51f610ea10f",
+                        "childColumnModelId": "8e6679ac-ae5a-40f3-ba7b-0eb8a73fbffa"
+                    }
+                ],
+                "onUpdateAction": "RESTRICT",
+                "onDeleteAction": "RESTRICT"
+            },
+            "lineViewModel": {
+                "strokeWidth": 1,
+                "edges": [],
+                "orthogonalLines": [
+                    {
+                        "direction": "horizontal",
+                        "position": -220.9
+                    },
+                    {
+                        "direction": "vertical",
+                        "position": -204.56
+                    },
+                    {
+                        "direction": "horizontal",
+                        "position": -46.11
+                    }
+                ],
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                }
+            },
+            "labelViewModel": {
+                "label": "user_group",
+                "position": {
+                    "segment": -1,
+                    "fraction": 0,
+                    "offsetX": 0,
+                    "offsetY": 0
+                },
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                },
+                "style": {
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "fontSize": 10
+                }
+            },
+            "createdAt": "2026-09-07T08:23:41.887Z"
+        },
+        {
+            "relationModel": {
+                "relationModelId": "d35328e8-1dc7-4776-815b-9061f65ebf5e",
+                "relationName": "user_session",
+                "parentTableModelId": "56f4beb4-4312-49e5-a607-601059a6178d",
+                "parentCardinality": "1",
+                "childTableModelId": "1d443242-5516-4135-bc90-27854c43de1c",
+                "childCardinality": "1",
+                "relationPairs": [
+                    {
+                        "parentColumnModelId": "899f97be-7e97-4e48-9ca1-f51f610ea10f",
+                        "childColumnModelId": "d039f843-4d75-4ceb-88fc-412637ea5079"
+                    }
+                ],
+                "onUpdateAction": "RESTRICT",
+                "onDeleteAction": "SET NULL"
+            },
+            "lineViewModel": {
+                "strokeWidth": 1,
+                "edges": [],
+                "orthogonalLines": [
+                    {
+                        "direction": "horizontal",
+                        "position": -212.63
+                    },
+                    {
+                        "direction": "vertical",
+                        "position": -179.76
+                    },
+                    {
+                        "direction": "horizontal",
+                        "position": -432.0702912384347
+                    }
+                ],
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                }
+            },
+            "labelViewModel": {
+                "label": "user_session",
+                "position": {
+                    "segment": -1,
+                    "fraction": 0,
+                    "offsetX": 0,
+                    "offsetY": 0
+                },
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                },
+                "style": {
+                    "bold": false,
+                    "italic": false,
+                    "strikethrough": false,
+                    "fontSize": 10
+                }
+            },
+            "createdAt": "2026-09-07T08:22:58.141Z"
         }
     ],
     "foregroundMemos": [],
