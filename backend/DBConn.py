@@ -13,7 +13,7 @@ class users(Base):
 
     userID: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     username: Mapped[str] = mapped_column(String(60))
-    password: Mapped[str] = mapped_column(String(60))
+    password: Mapped[str] = mapped_column(String(255))
     budgets: Mapped[list["budgets"]] = relationship(back_populates="creator")
 
 class budgets(Base):
