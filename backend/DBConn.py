@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, String, Integer, ForeignKey, create_engine
+from sqlalchemy import Boolean, String, Integer, Float, ForeignKey, create_engine
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, sessionmaker
 import uuid
 
@@ -25,11 +25,16 @@ class budgets(Base):
     creator: Mapped["users"] = relationship(back_populates="budgets")
     created: Mapped[str] = mapped_column(String(60), nullable=False)
     lastUpdated: Mapped[str] = mapped_column(String(60), nullable=False)
+    items: Mapped[list["budgetItems"]] = relationship(back_populates="budget")
 
-
-# class budgetItems(Base):
-#     __tablename__ = "BudgetItems"
-
+class budgetItems(Base):
+    __tablename__ = "BudgetItems"
+    itemID: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    budgetID: Mapped[int] = mapped_column(ForeignKey("Budgets.budgetID"))
+    budget: Mapped[budgets] = relationship(back_populates="items")
+    itemName: Mapped[str] = mapped_column(String(60), nullable=False)
+    itemValue: Mapped[float] = mapped_column(Float, nullable=False)
+    itemDescription: Mapped[str] = mapped_column(String(120), nullable=False)
 
 # class userGroups(Base):
 #     __tablename__ = "UserGroups"

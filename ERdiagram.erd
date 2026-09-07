@@ -1,6 +1,6 @@
 {
     "documentName": "ER diagram svende 2026",
-    "lastUpdatedAt": "2026-09-07T08:31:00.058Z",
+    "lastUpdatedAt": "2026-09-07T10:19:51.503Z",
     "tableViewModels": [
         {
             "tableModel": {
@@ -37,8 +37,7 @@
                     "8865ebaf-e317-457c-8275-a5866e453586",
                     "5ab01525-f005-4cae-b731-7958faf188a9",
                     "b63b2826-ce06-4420-b359-2b418086d403",
-                    "583741f7-a57f-4907-9ae6-e44dff3ab644",
-                    "405d2b43-2e2e-41d0-a8c4-2c13fc8da16d"
+                    "583741f7-a57f-4907-9ae6-e44dff3ab644"
                 ]
             },
             "top": -121.74999999999999,
@@ -53,7 +52,7 @@
                 "green": 0,
                 "blue": 0
             },
-            "createdAt": "2026-09-07T08:19:10.413Z"
+            "createdAt": "2026-09-07T10:19:51.501Z"
         },
         {
             "tableModel": {
@@ -191,10 +190,6 @@
             "columnModelId": "167d0345-927b-4e7a-bfac-0292a5435669",
             "columnShareModelId": "632a92d6-d69c-479f-80e7-d1c917770e2e",
             "notNull": true
-        },
-        {
-            "columnModelId": "405d2b43-2e2e-41d0-a8c4-2c13fc8da16d",
-            "columnShareModelId": "ca5e3c0b-6884-4e0e-a7f3-f3b3acfa5911"
         },
         {
             "columnModelId": "4ff0190d-ab0b-40ed-bb94-4a4aa8fc2738",
@@ -368,18 +363,11 @@
             "createdAt": "2026-09-07T08:20:39.404Z"
         },
         {
-            "columnShareModelId": "ca5e3c0b-6884-4e0e-a7f3-f3b3acfa5911",
-            "physicalName": "itemCategory",
-            "logicalName": "itemCategory",
-            "columnTypeId": 322,
-            "createdAt": "2026-09-07T08:19:06.380Z"
-        },
-        {
             "columnShareModelId": "bc964cb8-f865-4090-a6f5-b71877e5fd51",
             "physicalName": "itemDescription",
             "logicalName": "itemDescription",
-            "columnTypeId": 325,
-            "createdAt": "2026-09-07T08:18:35.873Z"
+            "columnTypeId": 322,
+            "createdAt": "2026-09-07T10:19:49.947Z"
         },
         {
             "columnShareModelId": "93dc58ab-9c3a-4129-8c55-43bf0c6cd1f5",
