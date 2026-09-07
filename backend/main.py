@@ -1,11 +1,32 @@
+from contextlib import asynccontextmanager
+import logging
+
 from DBConn import *
 
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import Depends, FastAPI, HTTPException, Body, Header
 from sqlalchemy.orm import Session
 
-app = FastAPI()
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
+@asynccontextmanager
+async def lifespan(app:FastAPI):
+    db = SessionLocal()
+    logger = logging.getLogger('uvicorn.error')
+    logger.setLevel(logging.INFO)
+    # u:users = db.query(users).first() # type: ignore
+    # logger.info(u.budgets[0].budgetName)
+    try:
+        yield
+    finally:
+        pass
+
+app = FastAPI(lifespan=lifespan) # type: ignore
 
 app.add_middleware(
     CORSMiddleware,
@@ -15,10 +36,3 @@ app.add_middleware(
     allow_headers=["*"],
     expose_headers=["*"]
 )
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()

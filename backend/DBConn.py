@@ -20,27 +20,27 @@ class budgets(Base):
     __tablename__ = "Budgets"
 
     budgetID: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    budgetName: Mapped[str] = mapped_column(String, nullable=False)
+    budgetName: Mapped[str] = mapped_column(String(60), nullable=False)
     creatorID: Mapped[str] = mapped_column(ForeignKey("Users.userID"))
     creator: Mapped["users"] = relationship(back_populates="budgets")
-    created: Mapped[str] = mapped_column(String, nullable=False)
-    lastUpdated: Mapped[str] = mapped_column(String, nullable=False)
+    created: Mapped[str] = mapped_column(String(60), nullable=False)
+    lastUpdated: Mapped[str] = mapped_column(String(60), nullable=False)
 
 
-class budgetItems(Base):
-    __tablename__ = "BudgetItems"
+# class budgetItems(Base):
+#     __tablename__ = "BudgetItems"
 
 
-class userGroups(Base):
-    __tablename__ = "UserGroups"
+# class userGroups(Base):
+#     __tablename__ = "UserGroups"
 
 
-class groups(Base):
-    __tablename__ = "BudgetGroups"
+# class groups(Base):
+#     __tablename__ = "BudgetGroups"
 
 
-class sessionLog(Base):
-    __tablename__ = "SessionLog"
+# class sessionLog(Base):
+#     __tablename__ = "SessionLog"
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
