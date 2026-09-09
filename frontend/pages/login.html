@@ -1,28 +1,24 @@
 <script>
-  const btn_login = document.getElementById("login_btn");
-  const login_form = document.getElementById("login-form");
-  const btn_register = document.getElementById("create_account");
-  const register_form = document.getElementById("register-form");
-
   function Goto(form) {
     if (form === "login") {
-      login_form.classList.remove("CloseForm");
-      register_form.classList.add("CloseForm");
+      document.getElementById("login-form").classList.remove("CloseForm");
+      document.getElementById("register-form").classList.add("CloseForm");
     }
     if (form === "register") {
-      login_form.classList.add("CloseForm");
-      register_form.classList.remove("CloseForm");
+      document.getElementById("login-form").classList.add("CloseForm");
+      document.getElementById("register-form").classList.remove("CloseForm");
     }
   }
-
+  $("#login_btn").click(function () {
+    window.sessionStorage.setItem("sessionToken", "TesterToken");
+    GotoPage("overview.html");
+  });
   //Login
   document.getElementById("gotoRegister").addEventListener("click", () => {
-    // btn_login for actual log in
     Goto("register");
   });
   //Register
   document.getElementById("gotoLogin").addEventListener("click", () => {
-    // btn_register for creating account
     Goto("login");
   });
 </script>
@@ -75,7 +71,7 @@
     padding: 10px;
     color: black;
 
-    h1{
+    h1 {
       margin: 0 0 5px 0;
     }
 
@@ -91,7 +87,7 @@
       &:last-of-type {
         background-color: transparent;
         border: none;
-        &:hover{
+        &:hover {
           text-decoration: underline;
         }
       }
@@ -135,6 +131,5 @@
       visibility: collapse;
       display: none;
     }
-
   }
 </style>

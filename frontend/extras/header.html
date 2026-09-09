@@ -1,3 +1,16 @@
+<script>
+  $(document).ready(function () {
+    if (window.sessionStorage.getItem("sessionToken")) {
+      $("nav").removeClass("hide");
+      $("#profile").removeClass("hide");
+    }
+    else {
+      $("nav").addClass("hide");
+      $("#profile").addClass("hide");
+    }
+  });
+</script>
+
 <div id="headerContainer">
   <div id="pageTitle">
     <p>_Tracky</p>
@@ -20,6 +33,10 @@
     p {
       margin: 0;
     }
+    .hide {
+      display: none;
+      visibility: collapse;
+    }
     #pageTitle {
       margin: 0;
       width: 150px;
@@ -33,17 +50,17 @@
       width: 50%;
       height: 100%;
       display: flex;
-      
+
       justify-content: center;
       a {
         cursor: pointer;
         user-select: none;
-        width:25%;
+        width: 25%;
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 24px;
-        &:hover{
+        &:hover {
           background-color: #1616169a;
         }
       }
@@ -63,7 +80,7 @@
         display: flex;
         user-select: none;
         cursor: pointer;
-        &:hover{
+        &:hover {
           background-color: #1616169a;
         }
       }
