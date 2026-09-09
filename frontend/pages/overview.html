@@ -20,8 +20,10 @@
   </div>
   <div id="overview-content">
     <div id="items">
-      <div id="itemsMenu">hell</div>
-      <div id="list"></div>
+      <div id="itemsMenu">
+        <button>New item</button>
+      </div>
+      <div id="itemlist"></div>
     </div>
     <div id="graphview">
       <div id="graph">i am</div>
@@ -45,6 +47,21 @@
       #items {
         width: 100%;
         height: 100%;
+
+        #itemsMenu {
+          width: 100%;
+          height: 50px;
+          padding: 5px 0px;
+          border-bottom: 1px solid black;
+          align-content: center;
+          button {
+            border:none;
+            width:100px;
+            height:85%;
+            font-size: 16px;
+            cursor: pointer;
+          }
+        }
       }
     }
 
