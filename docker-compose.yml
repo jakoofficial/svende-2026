@@ -17,7 +17,7 @@ services:
       interval: 5s
       timeout: 10s
       retries: 20
-
+  
   backend:
     build: ./backend/.
     container_name: tracky_backend
