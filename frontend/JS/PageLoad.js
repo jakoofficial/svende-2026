@@ -18,3 +18,4 @@ function GotoPage(page) {
   }
   $("#page").append($("<section>").load("./pages/" + page));
 }
+

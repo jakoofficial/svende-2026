@@ -2,13 +2,15 @@
   <div id="pageTitle">
     <p>_Tracky</p>
   </div>
-  <nav></nav>
+  <nav>
+    <a onclick="GotoPage('overview.html')">Overview</a>
+    <a onclick="GotoPage('budgets.html')">Budgets</a>
+  </nav>
   <div id="profile">
     <a onclick="GotoPage('overview.html')">Profile</a>
   </div>
 </div>
 
-<!-- <script src="../JS/PageLoad.js"></script> -->
 <style>
   #headerContainer {
     width: 95vw;
@@ -28,13 +30,24 @@
     }
     nav {
       margin: auto;
-      border-left: 1px solid black;
-      border-right: 1px solid black;
       width: 50%;
       height: 100%;
+      display: flex;
+      justify-content: center;
+      a {
+        cursor: pointer;
+        user-select: none;
+        width:25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        &:hover{
+          background-color: #1616169a;
+        }
+      }
     }
     #profile {
-      border-left: 1px solid black;
       width: 200px;
       height: 100%;
       font-size: 24px;
@@ -49,6 +62,9 @@
         display: flex;
         user-select: none;
         cursor: pointer;
+        &:hover{
+          background-color: #1616169a;
+        }
       }
     }
   }
