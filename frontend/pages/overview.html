@@ -19,9 +19,16 @@
     <a onclick="show(2)">List view</a>
   </div>
   <div id="overview-content">
-    <div id="items">hello</div>
-    <div id="graphview">i am </div>
-    <div id="listview">a list</div>
+    <div id="items">
+      <div id="itemsMenu">hell</div>
+      <div id="list"></div>
+    </div>
+    <div id="graphview">
+      <div id="graph">i am</div>
+    </div>
+    <div id="listview">
+      <div id="list">a list</div>
+    </div>
   </div>
 </div>
 
@@ -31,6 +38,15 @@
     height: 90vh;
     margin: 0px auto;
     border: 1px solid red;
+
+    #overview-content {
+      height: 100%;
+      width: 100%;
+      #items {
+        width: 100%;
+        height: 100%;
+      }
+    }
 
     .hide {
       display: none;
