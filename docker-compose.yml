@@ -3,7 +3,7 @@ services:
     image: mysql:latest
     container_name: tracky_db
     ports:
-      - "{db_port}:3306"
+      - "${db_port}:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=admin
       - MYSQL_DATABASE=tracky
@@ -22,7 +22,7 @@ services:
     build: ./backend/.
     container_name: tracky_backend
     ports:
-      - "{backend_port}:8080"
+      - "${backend_port}:8080"
     networks:
       - app-network
     restart: unless-stopped
@@ -34,7 +34,7 @@ services:
     build: ./frontend/
     container_name: tracky
     ports:
-      - "{frontend_port}:80"
+      - "${frontend_port}:80"
     networks:
       - app-network
     restart: unless-stopped
