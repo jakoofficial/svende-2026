@@ -1,21 +1,27 @@
 <script>
-  menu = ["#items", "#graphview", "#listview"];
-  function show(idx){
-    // document.
+  function show(idx) {
     // hide all except idx
+    const content = document.getElementById("overview-content").children;
+    for (let i = 0; i < content.length; i++) {
+      if (!content[i].classList.contains("hide")) {
+        content[i].classList.add("hide");
+      }
+    }
+    content[idx].classList.remove("hide");
   }
+  show(0);
 </script>
 
 <div class="content" id="overview">
   <div id="topbar">
-    <a>Items</a>
-    <a>Graph view</a>
-    <a>List view</a>
+    <a onclick="show(0)">Items</a>
+    <a onclick="show(1)">Graph view</a>
+    <a onclick="show(2)">List view</a>
   </div>
   <div id="overview-content">
-    <div id="items"></div>
-    <div id="graphview"></div>
-    <div id="listview"></div>
+    <div id="items">hello</div>
+    <div id="graphview">i am </div>
+    <div id="listview">a list</div>
   </div>
 </div>
 
@@ -25,6 +31,11 @@
     height: 90vh;
     margin: 0px auto;
     border: 1px solid red;
+
+    .hide {
+      display: none;
+      visibility: collapse;
+    }
 
     #topbar {
       background-color: rgba(56, 60, 65, 0.349);
