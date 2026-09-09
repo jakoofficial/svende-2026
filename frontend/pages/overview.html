@@ -1,10 +1,21 @@
-<script></script>
+<script>
+  menu = ["#items", "#graphview", "#listview"];
+  function show(idx){
+    // document.
+    // hide all except idx
+  }
+</script>
 
 <div class="content" id="overview">
   <div id="topbar">
     <a>Items</a>
     <a>Graph view</a>
     <a>List view</a>
+  </div>
+  <div id="overview-content">
+    <div id="items"></div>
+    <div id="graphview"></div>
+    <div id="listview"></div>
   </div>
 </div>
 
@@ -15,11 +26,27 @@
     margin: 0px auto;
     border: 1px solid red;
 
-    #topbar{
-      background-color: rgb(56, 60, 65);
+    #topbar {
+      background-color: rgba(56, 60, 65, 0.349);
+      width: 25%;
+      height: 50px;
+      display: flex;
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
 
-      a{
+      backdrop-filter: blur(50px);
+      a {
         cursor: pointer;
+        font-size: 18px;
+        display: flex;
+        width: 100%;
+        user-select: none;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+          background-color: #1616169a;
+        }
       }
     }
   }
