@@ -42,7 +42,6 @@ class userGroups(Base):
     group: Mapped[Integer] = mapped_column(ForeignKey("BudgetGroups.groupID"))
     user: Mapped[Integer] = mapped_column(ForeignKey("Users.userID"))
 
-
 class groups(Base):
     __tablename__ = "BudgetGroups"
     groupID: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)

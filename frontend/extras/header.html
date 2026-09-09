@@ -1,14 +1,14 @@
-<script></script>
 <div id="headerContainer">
   <div id="pageTitle">
     <p>_Tracky</p>
   </div>
   <nav></nav>
   <div id="profile">
-    <p>Profile</p>
+    <a onclick="GotoPage('overview.html')">Profile</a>
   </div>
 </div>
 
+<!-- <script src="../JS/PageLoad.js"></script> -->
 <style>
   #headerContainer {
     width: 95vw;
@@ -39,9 +39,16 @@
       height: 100%;
       font-size: 24px;
       display: flex;
-      align-items: center;
-      p {
-        margin: auto;
+      a {
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: #f0f0f0;
+        justify-content: center;
+        display: flex;
+        user-select: none;
+        cursor: pointer;
       }
     }
   }
