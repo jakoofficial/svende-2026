@@ -57,7 +57,7 @@ def get_user(username: str = Body(), db: Session = Depends(get_db)):
 @app.post("/login")
 def login(username: str = Body(), password: str = Body(), db: Session = Depends(get_db)):
     user = db.query(users).filter(users.username == username).first()
-    if verify_password(password, user.password):
+    if user and verify_password(password, user.password):
         #Continue the log in process
         pass
 
