@@ -4,36 +4,44 @@
     // hide all except idx
     const content = document.getElementById("overview-content").children;
     for (let i = 0; i < content.length; i++) {
-      if (!content[i].classList.contains("hide")) {
-        content[i].classList.add("hide");
-      }
+      content[i].classList.add("hide");
     }
     content[idx].classList.remove("hide");
   }
-  show(0);
 
-  // Charts
-  const ctx = document.getElementById("myChart");
+  $(document).ready(function () {
+    show(0);
+    // Charts
+    const ctx = document.getElementById("myChart");
 
-  new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: ["January", "Feburary", "March", "April", "May", "July", "June"],
-      datasets: [
-        {
-          label: "Monthly usage",
-          data: [12, 19, 3, 5, 2, 3],
-          borderWidth: 1,
-        },
-      ],
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
+    new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: [
+          "January",
+          "Feburary",
+          "March",
+          "April",
+          "May",
+          "July",
+          "June",
+        ],
+        datasets: [
+          {
+            label: "Monthly usage",
+            data: [12, 19, 3, 5, 2, 3],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
         },
       },
-    },
+    });
   });
 </script>
 
@@ -58,12 +66,11 @@
           </div>
         </div>
         <div id="listview">
-          <div id="list">Graph and list</div>
           <canvas id="myChart"></canvas>
         </div>
       </div>
     </div>
-    <div id="items">
+    <div id="items" class="hide">
       <div id="itemsMenu">
         <button>New item</button>
       </div>
@@ -109,7 +116,7 @@
         #view {
           #listview {
             display: flex;
-            width:45%;
+            width: 45%;
             canvas {
               display: block;
             }
