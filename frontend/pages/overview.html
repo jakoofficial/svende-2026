@@ -24,11 +24,19 @@
         <button>New item</button>
       </div>
       <div id="itemlist">
-        <div class="itemblock">
+        <div class="itemblocktop">
           <p>ItemName</p>
           <p>ItemDescription</p>
           <p>Price</p>
           <p>Date</p>
+          <button></button>
+          <button></button>
+        </div>
+        <div class="itemblock">
+          <p>[Item name]</p>
+          <p>[Description]</p>
+          <p>[Price]</p>
+          <p>[Date]</p>
           <button>Edit</button>
           <button>Remove</button>
         </div>
@@ -63,18 +71,16 @@
         #itemlist {
           height: 75%;
           overflow-y: scroll;
-          .itemblock {
+          .itemblocktop {
             width: 100%;
-            margin-bottom: 5px;
             height: 50px;
             display: flex;
-            button{
+            border-bottom: 1px solid rgba(0, 0, 0, 0.479);
+            button {
               display: flex;
-              align-items: center;
-              justify-content: center;
-              width:15%;
-              font-size: 16px;
-              cursor: pointer;
+              width: 20.5%;
+              background-color: #1616169a;
+              border: none;
             }
             p {
               display: flex;
@@ -83,16 +89,54 @@
               height: 100%;
               width: 100%;
               margin: 0px;
-              border-left:1px solid blue;
               background-color: #1616169a;
               &:nth-of-type(1) {
-                width:60%;
+                width: 60%;
               }
               &:nth-of-type(3) {
                 width: 50%;
               }
-              &:nth-of-type(4){
-                width:50%;
+              &:nth-of-type(4) {
+                width: 50%;
+              }
+            }
+          }
+          .itemblock {
+            width: 100%;
+            margin-bottom: 5px;
+            height: 50px;
+            display: flex;
+            button {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 20%;
+              font-size: 16px;
+              cursor: pointer;
+              background-color: rgba(56, 60, 65, 0.349);
+              border: none;
+              color: white;
+              &:hover {
+                background-color: #1616169a;
+              }
+            }
+            p {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100%;
+              width: 100%;
+              margin: 0px;
+              border-left: 1px solid rgba(56, 60, 65, 0.349);
+              background-color: #1616169a;
+              &:nth-of-type(1) {
+                width: 60%;
+              }
+              &:nth-of-type(3) {
+                width: 50%;
+              }
+              &:nth-of-type(4) {
+                width: 50%;
               }
             }
           }
