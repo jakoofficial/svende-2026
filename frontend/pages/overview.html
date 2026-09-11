@@ -14,11 +14,29 @@
 
 <div class="content" id="overview">
   <div id="topbar">
-    <a onclick="show(0)">Items</a>
-    <a onclick="show(1)">Graph view</a>
-    <a onclick="show(2)">List view</a>
+    <a onclick="show(0)">Overview</a>
+    <a onclick="show(1)">Items</a>
   </div>
   <div id="overview-content">
+    <div id="overview-page">
+      <div id="view">
+        <div id="top">
+          <div class="topcontainer">
+            <p>Monthly</p>
+            <p><span>Allocated:</span> 200,-</p>
+            <p>Used:<span> 250,-</span></p>
+          </div>
+          <div class="topcontainer">
+            <p>Weekly</p>
+            <p><span>Allocated:</span> 50,-</p>
+            <p>Used:<span> 25,-</span></p>
+          </div>
+        </div>
+        <div id="listview">
+          <div id="list">Graph and list</div>
+        </div>
+      </div>
+    </div>
     <div id="items">
       <div id="itemsMenu">
         <button>New item</button>
@@ -42,12 +60,6 @@
         </div>
       </div>
     </div>
-    <div id="graphview">
-      <div id="graph">i am</div>
-    </div>
-    <div id="listview">
-      <div id="list">a list</div>
-    </div>
   </div>
 </div>
 
@@ -61,6 +73,53 @@
     #overview-content {
       height: 100%;
       width: 100%;
+
+      #overview-page {
+        width: 80%;
+        height: 80%;
+        margin: auto;
+        position: relative;
+        top: 12.5%;
+        #view {
+          #top {
+            width: 100%;
+            height: 25%;
+            display: flex;
+            justify-content: end;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.479);
+
+            .topcontainer {
+              border-left: 1px solid rgba(0, 0, 0, 0.479);
+              width: 25%;
+              p {
+                margin: 0;
+                font-size: 28px;
+                &:nth-of-type(1) {
+                  padding-left: 50px;
+                }
+                &:nth-of-type(2) {
+                  font-size: 34px;
+                  text-align: end;
+                  padding-right: 100px;
+                  span {
+                    font-size: 18px;
+                  }
+                }
+                &:nth-of-type(3) {
+                  text-align: end;
+                  font-size: 16px;
+                  padding-right: 100px;
+                  span {
+                    font-size: 20px;
+                    color: rgb(207, 49, 49);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
       #items {
         height: 75%;
         width: 75%;
