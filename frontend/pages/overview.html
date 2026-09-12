@@ -147,7 +147,7 @@
     width: 95vw;
     height: 90vh;
     margin: 0px auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
     #overview-content {
       height: 100%;
@@ -358,6 +358,9 @@
         user-select: none;
         justify-content: center;
         align-items: center;
+        &:first-of-type{
+          border-right:1px solid black;
+        }
         &:hover {
           background-color: #1616169a;
         }
