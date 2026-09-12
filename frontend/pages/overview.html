@@ -12,9 +12,10 @@
   $(document).ready(function () {
     show(0);
     // Charts
-    const ctx = document.getElementById("myChart");
-
-    new Chart(ctx, {
+    const Monthctx = document.getElementById("monthly-chart");
+    const Weekctx = document.getElementById("weekly-chart");
+    Chart.defaults.font.size = 18;
+    new Chart(Monthctx, {
       type: "line",
       data: {
         labels: [
@@ -29,6 +30,35 @@
         datasets: [
           {
             label: "Monthly usage",
+            data: [12, 19, 3, 5, 2, 3],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+
+    new Chart(Weekctx, {
+      type: "line",
+      data: {
+        labels: [
+          "January",
+          "Feburary",
+          "March",
+          "April",
+          "May",
+          "July",
+          "June",
+        ],
+        datasets: [
+          {
+            label: "Weekly usage",
             data: [12, 19, 3, 5, 2, 3],
             borderWidth: 1,
           },
@@ -65,8 +95,13 @@
             <p>Used:<span> 25,-</span></p>
           </div>
         </div>
-        <div id="listview">
-          <canvas id="myChart"></canvas>
+        <div id="charts">
+          <div id="monthview">
+            <canvas id="monthly-chart"></canvas>
+          </div>
+          <div id="weekview">
+            <canvas id="weekly-chart"></canvas>
+          </div>
         </div>
       </div>
     </div>
@@ -114,17 +149,33 @@
         position: relative;
         top: 12.5%;
         #view {
-          #listview {
+          width: 100%;
+          height: 100%;
+          #charts {
+            width: 95%;
+            height: 75%;
+            /* background-color: aliceblue; */
+            margin: auto;
             display: flex;
-            width: 45%;
+            justify-content: center;
+            align-items: center;
+            #monthview {
+              width: 45%;
+              margin-right: 50px;
+              background-color: #1616169a;
+            }
+            #weekview {
+              width: 45%;
+              background-color: #1616169a;
+            }
             canvas {
-              display: block;
+              padding: 25px;
             }
           }
 
           #top {
             width: 100%;
-            height: 25%;
+            height: 15%;
             display: flex;
             justify-content: end;
             border-bottom: 1px solid rgba(0, 0, 0, 0.479);
@@ -132,6 +183,7 @@
             .topcontainer {
               border-left: 1px solid rgba(0, 0, 0, 0.479);
               width: 25%;
+              padding-bottom: 10px;
               p {
                 margin: 0;
                 font-size: 28px;
