@@ -30,8 +30,13 @@
         datasets: [
           {
             label: "Monthly usage",
-            data: [12, 19, 3, 5, 2, 3],
+            data: [120, 190, 300, 150, 210, 250],
             borderWidth: 1,
+          },
+          {
+            label: "Allocated",
+            data: [200, 200, 200, 200, 200, 200],
+            borderWidth: 2,
           },
         ],
       },
@@ -48,19 +53,21 @@
       type: "line",
       data: {
         labels: [
-          "January",
-          "Feburary",
-          "March",
-          "April",
-          "May",
-          "July",
-          "June",
+          "Week 1",
+          "Week 2",
+          "Week 3",
+          "Week 4",
         ],
         datasets: [
           {
             label: "Weekly usage",
-            data: [12, 19, 3, 5, 2, 3],
+            data: [35, 55, 75],
             borderWidth: 1,
+          },
+          {
+            label: "Allocated",
+            data: [50, 50, 50, 50],
+            borderWidth: 2,
           },
         ],
       },
@@ -94,6 +101,10 @@
             <p><span>Allocated:</span> 50,-</p>
             <p>Used:<span> 25,-</span></p>
           </div>
+        </div>
+        <div id="current">
+          <p>[Current Month]</p>
+          <p>[Current Week]</p>
         </div>
         <div id="charts">
           <div id="monthview">
@@ -151,10 +162,23 @@
         #view {
           width: 100%;
           height: 100%;
+          #current{
+            display: flex;
+            font-size: 20px;
+            margin: auto;
+            width:90%;
+            height:10%;
+            align-items: end;
+            p{
+              margin: 0;
+              padding-bottom: 5px;
+              display: flex;
+              width:100%;
+            }
+          }
           #charts {
             width: 95%;
-            height: 75%;
-            /* background-color: aliceblue; */
+            height: 55%;
             margin: auto;
             display: flex;
             justify-content: center;
@@ -283,6 +307,7 @@
               background-color: #1616169a;
               &:nth-of-type(1) {
                 width: 60%;
+                border-left:none;
               }
               &:nth-of-type(3) {
                 width: 50%;
