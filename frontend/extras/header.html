@@ -1,5 +1,12 @@
 <script>
   $(document).ready(function () {
+    showHeader();
+  });
+  $(window).on("headerUpdate", function (){
+    showHeader();
+  });
+
+  function showHeader() {
     if (window.sessionStorage.getItem("sessionToken")) {
       $("nav").removeClass("hide");
       $("#profile").removeClass("hide");
@@ -8,7 +15,7 @@
       $("nav").addClass("hide");
       $("#profile").addClass("hide");
     }
-  });
+  }
 </script>
 
 <div id="headerContainer">
@@ -20,7 +27,7 @@
     <a onclick="GotoPage('budgets.html')">Budgets</a>
   </nav>
   <div id="profile">
-    <a onclick="GotoPage('overview.html')">Profile</a>
+    <a onclick="GotoPage('logout.html')">Sign out</a>
   </div>
 </div>
 

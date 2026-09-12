@@ -1,0 +1,7 @@
+<script>
+    $(document).ready(function(){
+        window.sessionStorage.removeItem("sessionToken");
+        GotoPage("login.html");
+        $(window).trigger($.Event("headerUpdate"));
+    });
+</script>

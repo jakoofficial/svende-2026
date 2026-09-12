@@ -12,6 +12,7 @@
   $("#login_btn").click(function () {
     window.sessionStorage.setItem("sessionToken", "TesterToken");
     GotoPage("overview.html");
+    $(window).trigger($.Event("headerUpdate"));
   });
   //Login
   document.getElementById("gotoRegister").addEventListener("click", () => {
