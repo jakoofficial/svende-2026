@@ -1,6 +1,6 @@
 //Loading of the pages is done here
 
-const pages = ["login.html", "overview.html"];
+const pages = ["login.html", "overview.html", "budgets.html"];
 
 let selected_page = pages[0];
 
