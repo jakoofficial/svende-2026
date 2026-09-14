@@ -8,7 +8,7 @@
     content[idx].classList.remove("hide");
   }
 
-  $(document).ready(function() {
+  $(document).ready(function () {
     show(0);
   });
 </script>
@@ -22,16 +22,17 @@
     <div id="page-view">
       <div id="budget-view">
         <div id="budget-list">
+          <button id="new-btn">New budget</button>
           <div id="list">
             <a><span></span>Living basics</a>
             <a><span></span>Gifts</a>
           </div>
         </div>
         <div id="selected-budget">
-            <div id="selected-menu">
-                <button>Add item</button>
-            </div>
-            <div id="selected-view"></div>
+          <div id="selected-menu">
+            <button>Add item</button>
+          </div>
+          <div id="selected-view"></div>
         </div>
       </div>
       <div id="groups-view" class="hide"></div>
@@ -68,7 +69,7 @@
         justify-content: center;
         align-items: center;
         &:first-of-type {
-          border-right: 1px solid black;
+          border-right: 1px solid rgba(0, 0, 0, 0.479);
         }
         &:hover {
           background-color: #1616169a;
@@ -89,36 +90,55 @@
           #selected-budget {
             align-self: flex-end;
             width: 100%;
-            height:90%;
-            border:1px solid green;
+            height: 90%;
             display: flex;
             flex-wrap: wrap;
-            margin-left: 10px;
-            #selected-menu{
-                border-bottom: 1px solid black;
-                width:100%;
-                height:5%;
-                button{
-                    height:100%;
-                    border:none;
-                    width:100px;
+            #selected-menu {
+              border-bottom: 1px solid rgba(0, 0, 0, 0.479);
+              width: 100%;
+              height: 5%;
+              button {
+                height: 100%;
+                border: none;
+                width: 100px;
+                background-color: rgba(56, 60, 65, 0.349);
+                cursor: pointer;
+                color: white;
+                font-size: 18px;
+                &:hover {
+                  background-color: #1616169a;
                 }
+              }
             }
-            #selected-view{
-                width:100%;
-                height: 94%;
-                align-self: flex-end;
-                overflow-y: scroll;
-                
+            #selected-view {
+              width: 100%;
+              height: 94%;
+              align-self: flex-end;
+              overflow-y: scroll;
             }
           }
           #budget-list {
             width: 12%;
             align-content: center;
+            border-right:1px solid rgba(0, 0, 0, 0.479);
+            #new-btn {
+              border: none;
+              cursor: pointer;
+              width: 100%;
+              background-color: rgba(56, 60, 65, 0.349);
+              height: 40px;
+              color: white;
+              font-size: 18px;
+              border-top: 1px solid rgba(0, 0, 0, 0.479);
+              border-bottom: 1px solid rgba(0, 0, 0, 0.479);
+              &:hover {
+                background-color: #1616169a;
+              }
+            }
+
             #list {
               width: 100%;
               height: 50%;
-              border: 1px solid blue;
               span {
                 width: 10%;
               }
@@ -129,7 +149,11 @@
                 background-color: rgba(56, 60, 65, 0.349);
                 width: 100%;
                 height: 40px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.185);
                 overflow-x: hidden;
+                &:last-of-type{
+                  border-bottom: 1px solid rgba(0, 0, 0, 0.479);
+                }
                 &:hover {
                   background-color: #1616169a;
                 }
