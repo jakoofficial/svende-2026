@@ -27,7 +27,12 @@
             <a><span></span>Gifts</a>
           </div>
         </div>
-        <div id="selected-budget"></div>
+        <div id="selected-budget">
+            <div id="selected-menu">
+                <button>Add item</button>
+            </div>
+            <div id="selected-view"></div>
+        </div>
       </div>
       <div id="groups-view" class="hide"></div>
     </div>
@@ -40,7 +45,6 @@
       display: none;
       visibility: collapse;
     }
-
     width: 90vw;
     height: 90vh;
     margin: auto;
@@ -87,6 +91,26 @@
             width: 100%;
             height:90%;
             border:1px solid green;
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 10px;
+            #selected-menu{
+                border-bottom: 1px solid black;
+                width:100%;
+                height:5%;
+                button{
+                    height:100%;
+                    border:none;
+                    width:100px;
+                }
+            }
+            #selected-view{
+                width:100%;
+                height: 94%;
+                align-self: flex-end;
+                overflow-y: scroll;
+                
+            }
           }
           #budget-list {
             width: 12%;
