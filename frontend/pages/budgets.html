@@ -7,10 +7,12 @@
   </div>
   <div id="content">
     <div id="budget-list">
-        <a>living basics</a>
-        <a>Gifts</a>
+      <div id="list">
+        <a><span></span>Living basics</a>
+        <a><span></span>Gifts</a>
+      </div>
     </div>
-    <div id=""></div>
+    <div id="page-view"></div>
   </div>
 </div>
 
@@ -44,6 +46,37 @@
         &:hover {
           background-color: #1616169a;
         }
+      }
+    }
+    #content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      #budget-list {
+        width: 12%;
+        align-content: center;
+        #list {
+          width: 100%;
+          height: 50%;
+          border: 1px solid blue;
+          span {
+            width: 10%;
+          }
+          a {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            background-color: rgba(56, 60, 65, 0.349);
+            width: 100%;
+            height: 40px;
+            overflow-x: hidden;
+            &:hover {
+              background-color: #1616169a;
+            }
+          }
+        }
+      }
+      #page-view {
       }
     }
   }
