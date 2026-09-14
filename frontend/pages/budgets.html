@@ -1,23 +1,46 @@
-<script></script>
+<script>
+  function show(idx) {
+    // hide all except idx
+    const content = document.getElementById("page-view").children;
+    for (let i = 0; i < content.length; i++) {
+      content[i].classList.add("hide");
+    }
+    content[idx].classList.remove("hide");
+  }
+
+  $(document).ready(function() {
+    show(0);
+  });
+</script>
 
 <div id="budget">
   <div id="topbar">
-    <a>Budgets</a>
-    <a>Groups</a>
+    <a onclick="show(0)">Budgets</a>
+    <a onclick="show(1)">Groups</a>
   </div>
   <div id="content">
-    <div id="budget-list">
-      <div id="list">
-        <a><span></span>Living basics</a>
-        <a><span></span>Gifts</a>
+    <div id="page-view">
+      <div id="budget-view">
+        <div id="budget-list">
+          <div id="list">
+            <a><span></span>Living basics</a>
+            <a><span></span>Gifts</a>
+          </div>
+        </div>
+        <div id="selected-budget"></div>
       </div>
+      <div id="groups-view" class="hide"></div>
     </div>
-    <div id="page-view"></div>
   </div>
 </div>
 
 <style>
   #budget {
+    .hide {
+      display: none;
+      visibility: collapse;
+    }
+
     width: 90vw;
     height: 90vh;
     margin: auto;
@@ -52,31 +75,44 @@
       width: 100%;
       height: 100%;
       display: flex;
-      #budget-list {
-        width: 12%;
-        align-content: center;
-        #list {
-          width: 100%;
-          height: 50%;
-          border: 1px solid blue;
-          span {
-            width: 10%;
-          }
-          a {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            background-color: rgba(56, 60, 65, 0.349);
+      #page-view {
+        width: inherit;
+        height: inherit;
+        #budget-view {
+          width: inherit;
+          height: inherit;
+          display: flex;
+          #selected-budget {
+            align-self: flex-end;
             width: 100%;
-            height: 40px;
-            overflow-x: hidden;
-            &:hover {
-              background-color: #1616169a;
+            height:90%;
+            border:1px solid green;
+          }
+          #budget-list {
+            width: 12%;
+            align-content: center;
+            #list {
+              width: 100%;
+              height: 50%;
+              border: 1px solid blue;
+              span {
+                width: 10%;
+              }
+              a {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                background-color: rgba(56, 60, 65, 0.349);
+                width: 100%;
+                height: 40px;
+                overflow-x: hidden;
+                &:hover {
+                  background-color: #1616169a;
+                }
+              }
             }
           }
         }
-      }
-      #page-view {
       }
     }
   }
