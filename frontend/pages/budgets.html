@@ -1,12 +1,50 @@
 <script></script>
 
-<div id="budget"></div>
+<div id="budget">
+  <div id="topbar">
+    <a>Budgets</a>
+    <a>Groups</a>
+  </div>
+  <div id="content">
+    <div id="budget-list">
+        <a>living basics</a>
+        <a>Gifts</a>
+    </div>
+    <div id=""></div>
+  </div>
+</div>
 
 <style>
-    #budget{
-        width:85vw;
-        height:90vh;
-        margin: auto;
-        border: 1px solid red;
+  #budget {
+    width: 90vw;
+    height: 90vh;
+    margin: auto;
+    border: 1px solid red;
+    #topbar {
+      background-color: rgba(56, 60, 65, 0.349);
+      width: 25%;
+      height: 50px;
+      display: flex;
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+
+      backdrop-filter: blur(50px);
+      a {
+        cursor: pointer;
+        font-size: 18px;
+        display: flex;
+        width: 100%;
+        user-select: none;
+        justify-content: center;
+        align-items: center;
+        &:first-of-type {
+          border-right: 1px solid black;
+        }
+        &:hover {
+          background-color: #1616169a;
+        }
+      }
     }
+  }
 </style>
