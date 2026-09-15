@@ -8,11 +8,24 @@
     }
     content[idx].classList.remove("hide");
   }
+  function show_hideForm(is_edit = false) {
+    if (!$("#item-form").hasClass("hide")){
+      $("#item-form").addClass("hide");
+    } else{
+      $("#item-form").removeClass("hide");
+    }
 
-  $(document).ready(function () {
+    if (is_edit){
+      $("#itemcreatebtn").text("Edit item");
+    }
+    else{
+      $("#itemcreatebtn").text("Create item");
+    }
+  }
+  function setGraphs(){
     // Charts
-    const Monthctx = document.getElementById("monthly-chart");
     const Weekctx = document.getElementById("weekly-chart");
+    const Monthctx = document.getElementById("monthly-chart");
     Chart.defaults.font.size = 18;
     new Chart(Monthctx, {
       type: "line",
@@ -72,6 +85,11 @@
         },
       },
     });
+
+  }
+  
+  $(document).ready(function () {
+    setGraphs();
     show(1);
   });
 </script>
@@ -111,7 +129,7 @@
       </div>
     </div>
     <div id="items" class="">
-      <div id="item-form">
+      <div id="item-form" class="hide">
         <div id="form">
           <div>
             <input type="text" placeholder="Item Name" />
@@ -125,13 +143,13 @@
           ></textarea>
           <p id="form-error" class="noError">Error</p>
           <div>
-            <button>Cancel</button>
-            <button>Create item</button>
+            <button onclick="show_hideForm()">Cancel</button>
+            <button id="itemcreatebtn">Create item</button>
           </div>
         </div>
       </div>
       <div id="itemsMenu">
-        <button>New item</button>
+        <button onclick="show_hideForm()">New item</button>
       </div>
       <div id="itemlist">
         <div class="itemblocktop">
@@ -147,7 +165,7 @@
           <p>[Description]</p>
           <p>[Price]</p>
           <p>[Date]</p>
-          <button>Edit</button>
+          <button onclick="show_hideForm(true)">Edit</button>
           <button>Remove</button>
         </div>
       </div>
@@ -265,6 +283,9 @@
           height: 100%;
           backdrop-filter: blur(2px);
           display: flex;
+          &.hide{
+            display: none;
+          }
           #form {
             display: flex;
             width: 35%;
