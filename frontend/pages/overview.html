@@ -52,12 +52,7 @@
     new Chart(Weekctx, {
       type: "line",
       data: {
-        labels: [
-          "Week 1",
-          "Week 2",
-          "Week 3",
-          "Week 4",
-        ],
+        labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
         datasets: [
           {
             label: "Weekly usage",
@@ -162,18 +157,18 @@
         #view {
           width: 100%;
           height: 100%;
-          #current{
+          #current {
             display: flex;
             font-size: 20px;
             margin: auto;
-            width:90%;
-            height:10%;
+            width: 90%;
+            height: 10%;
             align-items: end;
-            p{
+            p {
               margin: 0;
               padding-bottom: 5px;
               display: flex;
-              width:100%;
+              width: 100%;
             }
           }
           #charts {
@@ -199,7 +194,7 @@
 
           #top {
             width: 100%;
-            height: 15%;
+            height: 15vh;
             display: flex;
             justify-content: end;
             border-bottom: 1px solid rgba(0, 0, 0, 0.479);
@@ -307,7 +302,7 @@
               background-color: #1616169a;
               &:nth-of-type(1) {
                 width: 60%;
-                border-left:none;
+                border-left: none;
               }
               &:nth-of-type(3) {
                 width: 50%;
@@ -329,7 +324,12 @@
             width: 100px;
             height: 85%;
             font-size: 16px;
+            background-color: rgba(56, 60, 65, 0.349);
             cursor: pointer;
+            color: white;
+            &:hover {
+              background-color: #1616169a;
+            }
           }
         }
       }
@@ -358,8 +358,8 @@
         user-select: none;
         justify-content: center;
         align-items: center;
-        &:first-of-type{
-          border-right:1px solid black;
+        &:first-of-type {
+          border-right: 1px solid black;
         }
         &:hover {
           background-color: #1616169a;

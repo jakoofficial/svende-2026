@@ -39,7 +39,22 @@
         <div id="group-top">
           <button id="new-btn">New group</button>
         </div>
-        <div id="grouplist"></div>
+        <div id="grouplist">
+          <div id="grouplist-top">
+            <p>Group name</p>
+            <p>Member amount</p>
+            <span></span>
+            <button></button>
+            <button></button>
+          </div>
+          <div id="group-item">
+            <p>[Group name]</p>
+            <p>0 / 0</p>
+            <span></span>
+            <button>Edit</button>
+            <button>Remove</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -199,7 +214,56 @@
             display: flex;
             width: 100%;
             height: 100%;
+            flex-direction: column;
+            overflow-y: scroll;
+            p {
+              display: flex;
+              width: 20%;
+              height: 100%;
+              align-content: center;
+              margin: 0;
+              justify-content: center;
+              align-items: center;
+              &:nth-of-type(1){
+                border-right: 1px solid rgba(56, 60, 65, 0.349);
+                width:30%;
+              }
+            }
+            span {
+              width: 100%;
+            }
+            button {
+              display: flex;
+              justify-self: right;
+              border: none;
+              cursor: pointer;
+              width: 150px;
+              font-size: 18px;
+              justify-content: center;
+              background-color: rgba(56, 60, 65, 0.349);
+              align-items: center;
+              color: white;
+              &:hover {
+                background-color: #1616169a;
+              }
+            }
             /* background-color: rgb(206, 156, 83); */
+            #grouplist-top {
+              display: flex;
+              width: 100%;
+              height: 50px;
+              background-color: #1616169a;
+              border-bottom: 1px solid black;
+              button {
+                background-color: transparent;
+              }
+            }
+            #group-item {
+              display: flex;
+              width: 100%;
+              height: 50px;
+              background-color: #1616169a;
+            }
           }
         }
       }
