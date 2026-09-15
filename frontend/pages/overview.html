@@ -114,11 +114,20 @@
       <div id="item-form">
         <div id="form">
           <div>
-            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Item Name" />
             <span></span>
-            <input type="number" placeholder="Price">
+            <input type="number" placeholder="Item Price" min="1" />
           </div>
-          <textarea name="itemdescription" id="" rows="6" cols="50"></textarea>
+          <textarea
+            placeholder="Description"
+            name="itemdescription"
+            id=""
+          ></textarea>
+          <p id="form-error" class="noError">Error</p>
+          <div>
+            <button>Cancel</button>
+            <button>Create item</button>
+          </div>
         </div>
       </div>
       <div id="itemsMenu">
@@ -248,39 +257,78 @@
         position: relative;
         top: 50%;
         transform: translateY(-50%);
-        
-        #item-form{
-          position:absolute;
+
+        #item-form {
+          position: absolute;
           background-color: rgba(0, 0, 0, 0.25);
-          width:100%;
-          height:100%;
+          width: 100%;
+          height: 100%;
           backdrop-filter: blur(2px);
           display: flex;
-          #form{
+          #form {
             display: flex;
-            width:25%;
-            background-color: aliceblue;
+            width: 35%;
+            background-color: #4141419a;
             margin: auto;
+            padding: 10px;
             flex-direction: column;
-            div:first-of-type{
-              width:100%;
-              display: flex;
-              span{
-                width:100%;
+
+            #form-error {
+              color: red;
+              margin: 0;
+              height: 50px;
+              &.noError {
+                display: none;
+                visibility: collapse;
               }
-              input{
-                height:30px;
-                width: 50%;
-                font-size: 18px;
-                &:nth-of-type(2){
-                  width: 50%;
+            }
+            div:nth-of-type(2) {
+              margin-top: 10px;
+              height: 40px;
+              display: flex;
+              justify-content: end;
+              button {
+                height: 100%;
+                width: 25%;
+                border: none;
+                background-color: rgba(56, 60, 65, 0.349);
+                cursor: pointer;
+                color: white;
+                border-right: 1px solid black;
+                font-size: 16px;
+                &:last-of-type {
+                  border-right: none;
+                }
+                &:hover {
+                  background-color: #1616169a;
                 }
               }
             }
-            textarea{
+            div:first-of-type {
+              width: 100%;
+              display: flex;
+              span {
+                width: 10%;
+              }
+              input {
+                height: 30px;
+                width: 100%;
+                font-size: 18px;
+                padding-left: 5px;
+                background-color: rgba(255, 255, 255, 0.884);
+                &:nth-of-type(2) {
+                  width: 75%;
+                }
+              }
+            }
+            textarea {
+              margin-top: 10px;
+              padding-left: 5px;
+              display: flex;
+              background-color: rgba(255, 255, 255, 0.884);
               resize: none;
-              width: 400px;
-              height:80px;
+              height: 80px;
+              font-size: 16px;
             }
           }
         }
