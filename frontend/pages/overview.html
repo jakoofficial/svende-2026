@@ -9,20 +9,19 @@
     content[idx].classList.remove("hide");
   }
   function show_hideForm(is_edit = false) {
-    if (!$("#item-form").hasClass("hide")){
+    if (!$("#item-form").hasClass("hide")) {
       $("#item-form").addClass("hide");
-    } else{
+    } else {
       $("#item-form").removeClass("hide");
     }
 
-    if (is_edit){
+    if (is_edit) {
       $("#itemcreatebtn").text("Edit item");
-    }
-    else{
+    } else {
       $("#itemcreatebtn").text("Create item");
     }
   }
-  function setGraphs(){
+  function setGraphs() {
     // Charts
     const Weekctx = document.getElementById("weekly-chart");
     const Monthctx = document.getElementById("monthly-chart");
@@ -85,9 +84,22 @@
         },
       },
     });
-
   }
-  
+
+  function setItemList() {
+    var block = $("<div class='itemblock'>");
+    var itemname = $("<p>").text("sadsad");
+    var desc = $("<p>").text("Description of item");
+    var price = $("<p>").text("00" + ",-");
+    var date = $("<p>").text("XX-XX-XXXX");
+    var editbtn = $("<button onclick='show_hideForm(true)'>").text("Edit");
+    var removebtn = $("<button>").text("Remove");
+    var item = block.append(itemname, desc, price, date, editbtn, removebtn)
+    $("#itemlist").append(item);
+    console.log(block)
+  }
+  setItemList();
+
   $(document).ready(function () {
     setGraphs();
     show(1);
@@ -159,14 +171,6 @@
           <p>Date</p>
           <button></button>
           <button></button>
-        </div>
-        <div class="itemblock">
-          <p>[Item name]</p>
-          <p>[Description]</p>
-          <p>[Price]</p>
-          <p>[Date]</p>
-          <button onclick="show_hideForm(true)">Edit</button>
-          <button>Remove</button>
         </div>
       </div>
     </div>
@@ -283,7 +287,7 @@
           height: 100%;
           backdrop-filter: blur(2px);
           display: flex;
-          &.hide{
+          &.hide {
             display: none;
           }
           #form {
