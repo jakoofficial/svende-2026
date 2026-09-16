@@ -13,7 +13,7 @@
     content[idx].classList.remove("hide");
   }
 
-  function show_hideForm(is_edit = false) {
+  function show_hideFormBudget(is_edit = false) {
     if (!$("#budget-form").hasClass("hide")) {
       $("#budget-form").addClass("hide");
     } else {
@@ -27,8 +27,18 @@
     }
   }
 
+  function show_hideFormAddItem() {
+    if (!$("#addItem-form").hasClass("hide")) {
+      $("#addItem-form").addClass("hide");
+    } else {
+      $("#addItem-form").removeClass("hide");
+    }
+  }
+
   $(document).ready(function () {
     show(0);
+    show_hideFormBudget();
+    show_hideFormAddItem();
   });
 </script>
 
@@ -62,22 +72,39 @@
               <elix-check-list-item>slkdjsakld</elix-check-list-item>
             </elix-multi-select-list-box>
             <div>
-              <button onclick="show_hideForm()">Cancel</button>
-              <button id="itemcreatebtn">Create budget</button>
+              <button onclick="show_hideFormBudget()">Cancel</button>
+              <button id="createbudgetbtn">Create budget</button>
             </div>
           </div>
         </div>
         <div id="budget-list">
-          <button onclick="show_hideForm()" id="new-btn">New budget</button>
+          <button onclick="show_hideFormBudget()" id="new-btn">
+            New budget
+          </button>
           <div id="list">
             <a><span></span>Living basics</a>
             <a><span></span>Gifts</a>
           </div>
         </div>
 
+        <div id="addItem-form" class="">
+          <div id="form">
+            <input type="text" placeholder="Search items" />
+            <p>Items</p>
+            <elix-multi-select-list-box>
+              <elix-check-list-item>Item</elix-check-list-item>
+              <elix-check-list-item>Item</elix-check-list-item>
+              <elix-check-list-item>Item</elix-check-list-item>
+            </elix-multi-select-list-box>
+            <div>
+              <button onclick="show_hideFormAddItem()">Cancel</button>
+              <button id="additembtn">Add item(s)</button>
+            </div>
+          </div>
+        </div>
         <div id="selected-budget">
           <div id="selected-menu">
-            <button>Add item</button>
+            <button onclick="show_hideFormAddItem()">Add item</button>
           </div>
           <div id="selected-view">
             <div id="selected-itemtop">
@@ -187,15 +214,15 @@
             margin: auto;
             padding: 10px;
             flex-direction: column;
-            p{
-              margin:0;
-              margin-top:10px;
+            p {
+              margin: 0;
+              margin-top: 10px;
             }
 
             elix-multi-select-list-box {
-              border:none;
+              border: none;
               width: 100%;
-              height:200px;
+              height: 200px;
               overflow-y: scroll;
             }
             #form-error {
@@ -234,8 +261,78 @@
               width: 98%;
               font-size: 18px;
               background-color: rgba(255, 255, 255, 0.884);
-              &:last-of-type{
-                margin:10px 0 0px 0;
+              &:last-of-type {
+                margin: 10px 0 0px 0;
+              }
+            }
+          }
+        }
+        #addItem-form {
+          position: absolute;
+          background-color: rgba(0, 0, 0, 0.25);
+          width: 90%;
+          height: 90%;
+          backdrop-filter: blur(2px);
+          display: flex;
+          &.hide {
+            display: none;
+          }
+          #form {
+            display: flex;
+            width: 25%;
+            background-color: #4141419a;
+            margin: auto;
+            padding: 10px;
+            flex-direction: column;
+            p {
+              margin: 0;
+              margin-top: 10px;
+            }
+
+            elix-multi-select-list-box {
+              border: none;
+              width: 100%;
+              height: 200px;
+              overflow-y: scroll;
+            }
+            #form-error {
+              color: red;
+              margin: 0;
+              height: 25px;
+              &.noError {
+                display: none;
+                visibility: collapse;
+              }
+            }
+            div:nth-of-type(1) {
+              margin-top: 10px;
+              height: 40px;
+              display: flex;
+              justify-content: end;
+              button {
+                height: 100%;
+                width: 30%;
+                border: none;
+                background-color: rgba(56, 60, 65, 0.349);
+                cursor: pointer;
+                color: white;
+                border-right: 1px solid black;
+                font-size: 16px;
+                &:last-of-type {
+                  border-right: none;
+                }
+                &:hover {
+                  background-color: #1616169a;
+                }
+              }
+            }
+            input {
+              height: 30px;
+              width: 98%;
+              font-size: 18px;
+              background-color: rgba(255, 255, 255, 0.884);
+              &:last-of-type {
+                margin: 10px 0 0px 0;
               }
             }
           }
