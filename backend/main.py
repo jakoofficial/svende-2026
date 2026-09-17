@@ -52,9 +52,12 @@ def create_user(username: str = Body(), password: str = Body(), db: Session = De
     db.commit()
 
 @app.get("/getUser")
-def get_user(username: str = Body(), db: Session = Depends(get_db)):
+def get_user(username: str = Header(), db: Session = Depends(get_db)):
     #Get the users information
-    pass
+    user = db.query(users).filter(users.username == username).first()
+    if user:
+        return user.userID
+    return "No user found"
 
 @app.post("/login")
 def login(username: str = Body(), password: str = Body(), db: Session = Depends(get_db)):
