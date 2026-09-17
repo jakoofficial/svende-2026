@@ -4,6 +4,7 @@ import logging
 from DBConn import *
 from security import *
 from datetime import datetime, timedelta
+from pytz import timezone
 
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import Depends, FastAPI, HTTPException, Body, Header
@@ -61,7 +62,7 @@ def login(username: str = Body(), password: str = Body(), db: Session = Depends(
     if user and verify_password(password, user.password):
         #Continue the log in process
         #Calculate the datetime
-        datenow = datetime.now()
+        datenow = datetime.now(timezone('UTC'))
         dateextend = timedelta(hours=1)
         dateend = datenow + dateextend
         #Create the session
@@ -77,6 +78,15 @@ def login(username: str = Body(), password: str = Body(), db: Session = Depends(
         return [user.userID, session.session_key]
     else:
         return "No user found!";
+
+@app.delete("/logout")
+def logout(session:str = Body(), db: Session = Depends(get_db)):
+    token = db.query(sessionLog).filter(sessionLog.session_key == session).first()
+    if token:
+        db.delete(token)
+        db.commit()
+    return "Session ended"
+
 
 @app.post("/createBudget")
 def create_budget(budgetName: str = Body(), db: Session = Depends(get_db)):
