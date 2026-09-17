@@ -3,6 +3,7 @@ import logging
 
 from DBConn import *
 from security import *
+from datetime import datetime, timedelta
 
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import Depends, FastAPI, HTTPException, Body, Header
@@ -59,7 +60,21 @@ def login(username: str = Body(), password: str = Body(), db: Session = Depends(
     user = db.query(users).filter(users.username == username).first()
     if user and verify_password(password, user.password):
         #Continue the log in process
-        pass
+        #Calculate the datetime
+        datenow = datetime.now()
+        dateextend = timedelta(hours=1)
+        dateend = datenow + dateextend
+        #Create the session
+        session = sessionLog()
+        session.user = user.userID
+        session.created = datenow.strftime("%d/%m/%Y, %H:%M:%S")
+        session.ends = dateend.strftime("%d/%m/%Y, %H:%M:%S")
+        
+        db.add(session)
+        db.commit()
+        db.refresh(session)
+        
+        return [user.userID, session.session_key]
     else:
         return "No user found!";
 

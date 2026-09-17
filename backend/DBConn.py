@@ -56,8 +56,8 @@ class sessionLog(Base):
                                              unique=True,
                                              index=True
                                              )
-    created: Mapped[DateTime] = mapped_column(DateTime, nullable=False)
-    ends: Mapped[DateTime] = mapped_column(DateTime, nullable=False)
+    created: Mapped[str] = mapped_column(String(32), nullable=False)
+    ends: Mapped[str] = mapped_column(String(32), nullable=False)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 

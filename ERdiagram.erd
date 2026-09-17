@@ -1,6 +1,6 @@
 {
     "documentName": "ER diagram svende 2026",
-    "lastUpdatedAt": "2026-09-07T10:19:51.503Z",
+    "lastUpdatedAt": "2026-09-17T06:41:58.633Z",
     "tableViewModels": [
         {
             "tableModel": {
@@ -138,6 +138,7 @@
                 "columnModelIds": [
                     "649bb000-819c-4b9e-af7c-3d70912bade5",
                     "d039f843-4d75-4ceb-88fc-412637ea5079",
+                    "4d22b6cb-bd84-446d-9757-5a848b15d980",
                     "600b5c59-28d5-4ec3-bfba-e233398666de",
                     "71a414e0-a58d-473b-9381-ae5bc28a7076"
                 ]
@@ -154,7 +155,7 @@
                 "green": 0,
                 "blue": 0
             },
-            "createdAt": "2026-09-07T08:22:01.741Z"
+            "createdAt": "2026-09-17T06:41:58.632Z"
         }
     ],
     "columnGroupModels": [],
@@ -190,6 +191,12 @@
             "columnModelId": "167d0345-927b-4e7a-bfac-0292a5435669",
             "columnShareModelId": "632a92d6-d69c-479f-80e7-d1c917770e2e",
             "notNull": true
+        },
+        {
+            "columnModelId": "4d22b6cb-bd84-446d-9757-5a848b15d980",
+            "columnShareModelId": "cb2a886d-81e3-4506-aada-d38c01203416",
+            "notNull": true,
+            "unique": true
         },
         {
             "columnModelId": "4ff0190d-ab0b-40ed-bb94-4a4aa8fc2738",
@@ -403,6 +410,13 @@
             "logicalName": "password",
             "columnTypeId": 322,
             "createdAt": "2026-09-07T07:37:00.594Z"
+        },
+        {
+            "columnShareModelId": "cb2a886d-81e3-4506-aada-d38c01203416",
+            "physicalName": "session_key",
+            "logicalName": "session_key",
+            "columnTypeId": 322,
+            "createdAt": "2026-09-17T06:41:49.419Z"
         },
         {
             "columnShareModelId": "f81c80d9-1de9-4070-8bdd-9011f68b6517",
