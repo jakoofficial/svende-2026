@@ -60,6 +60,8 @@ def login(username: str = Body(), password: str = Body(), db: Session = Depends(
     if user and verify_password(password, user.password):
         #Continue the log in process
         pass
+    else:
+        return "No user found!";
 
 @app.post("/createBudget")
 def create_budget(budgetName: str = Body(), db: Session = Depends(get_db)):

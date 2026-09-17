@@ -51,6 +51,11 @@ class sessionLog(Base):
     __tablename__ = "SessionLog"
     sessionID: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     user: Mapped[int] = mapped_column(ForeignKey("Users.userID"))
+    session_key: Mapped[str] = mapped_column(String(32),
+                                             default=lambda:str(uuid.uuid4().hex),
+                                             unique=True,
+                                             index=True
+                                             )
     created: Mapped[DateTime] = mapped_column(DateTime, nullable=False)
     ends: Mapped[DateTime] = mapped_column(DateTime, nullable=False)
 
