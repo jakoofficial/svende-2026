@@ -4,7 +4,6 @@ import logging
 from DBConn import *
 from security import *
 from datetime import datetime, timedelta
-from pytz import timezone
 
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import Depends, FastAPI, HTTPException, Body, Header
@@ -65,7 +64,7 @@ def login(username: str = Body(), password: str = Body(), db: Session = Depends(
     if user and verify_password(password, user.password):
         #Continue the log in process
         #Calculate the datetime
-        datenow = datetime.now(timezone('UTC'))
+        datenow = datetime.now()
         dateextend = timedelta(hours=1)
         dateend = datenow + dateextend
         #Create the session
