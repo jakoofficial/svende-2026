@@ -94,47 +94,47 @@ def logout(session:str = Body(), db: Session = Depends(get_db)):
 
 #Budget
 @app.post("/createBudget")
-def create_budget(budgetName: str = Body(), db: Session = Depends(get_db)):
+def create_budget(token: str = Body(), budgetName: str = Body(), members: List[int] = Body(), db: Session = Depends(get_db)):
     pass
 
 @app.delete("/deleteBudget")
-def remove_budget(budgetID: int = Header(), db: Session = Depends(get_db)):
+def remove_budget(token: str = Body(),budgetID: int = Header(), db: Session = Depends(get_db)):
     pass
 
 @app.get("/getBudgetByID")
-def get_budget_by_id(budgetID: int = Body(), db: Session = Depends(get_db)):
+def get_budget_by_id(token: str = Body(),budgetID: int = Body(), db: Session = Depends(get_db)):
     pass
 
 @app.post("/addItemBudget")
-def add_item_to_budget(budgetID: int = Body(), items: List[int] = Body(), db: Session = Depends(get_db)):
+def add_item_to_budget(token: str = Body(),budgetID: int = Body(), items: List[int] = Body(), db: Session = Depends(get_db)):
     pass
 
 @app.delete("/removeItemFromBudget")
-def remove_item_from_budget(budgetID: int = Header(), itemID: int = Header(), db: Session = Depends(get_db)):
+def remove_item_from_budget(token: str = Body(),budgetID: int = Header(), itemID: int = Header(), db: Session = Depends(get_db)):
     pass
 
 #Group
 @app.post("/createGroup")
-def create_group(groupname: str = Body(), members: List[int] = Body(), db: Session = Depends(get_db)):
+def create_group(token: str = Body(),groupname: str = Body(), members: List[int] = Body(), db: Session = Depends(get_db)):
     pass
 
 @app.put("/updateGroup")
-def update_group(groupID: int = Body(), members: List[int] = Body(), db: Session = Depends(get_db)):
+def update_group(token: str = Body(),groupID: int = Body(), members: List[int] = Body(), db: Session = Depends(get_db)):
     pass
 
 @app.delete("/removeGroup")
-def remove_group(groupID: int = Header(), db: Session = Depends(get_db)):
+def remove_group(token: str = Body(),groupID: int = Header(), db: Session = Depends(get_db)):
     pass
 
 #Item
 @app.post("/createItem")
-def create_item(itemName: str = Body(), itemDesc: str = Body(), itemPrice: float = Body(), dateAdded: str = Body(), db: Session = Depends(get_db)):
+def create_item(token: str = Body(),itemName: str = Body(), itemDesc: str = Body(), itemPrice: float = Body(), dateAdded: str = Body(), db: Session = Depends(get_db)):
     pass
 
 @app.put("/updateItem")
-def update_item(itemName: str = Body(), itemDesc: str = Body(), itemPrice: float = Body(), db: Session = Depends(get_db)):
+def update_item(token: str = Body(),itemName: str = Body(), itemDesc: str = Body(), itemPrice: float = Body(), db: Session = Depends(get_db)):
     pass
 
 @app.delete("/removeItem")
-def remove_item(itemID: int = Header(), db: Session = Depends(get_db)):
+def remove_item(token: str = Body(),itemID: int = Header(), db: Session = Depends(get_db)):
     pass
