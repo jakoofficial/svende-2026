@@ -113,4 +113,28 @@ def add_item_to_budget(budgetID: int = Body(), items: List[int] = Body(), db: Se
 def remove_item_from_budget(budgetID: int = Header(), itemID: int = Header(), db: Session = Depends(get_db)):
     pass
 
+#Group
+@app.post("/createGroup")
+def create_group(groupname: str = Body(), members: List[int] = Body(), db: Session = Depends(get_db)):
+    pass
+
+@app.put("/updateGroup")
+def update_group(groupID: int = Body(), members: List[int] = Body(), db: Session = Depends(get_db)):
+    pass
+
+@app.delete("/removeGroup")
+def remove_group(groupID: int = Header(), db: Session = Depends(get_db)):
+    pass
+
 #Item
+@app.post("/createItem")
+def create_item(itemName: str = Body(), itemDesc: str = Body(), itemPrice: float = Body(), dateAdded: str = Body(), db: Session = Depends(get_db)):
+    pass
+
+@app.put("/updateItem")
+def update_item(itemName: str = Body(), itemDesc: str = Body(), itemPrice: float = Body(), db: Session = Depends(get_db)):
+    pass
+
+@app.delete("/removeItem")
+def remove_item(itemID: int = Header(), db: Session = Depends(get_db)):
+    pass
