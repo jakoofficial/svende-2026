@@ -53,7 +53,7 @@ def create_user(username: str = Body(), password: str = Body(), db: Session = De
     db.commit()
 
 @app.get("/getUser")
-def get_user(username: str = Header(), db: Session = Depends(get_db)):
+def get_user(token: str = Body(), username: str = Header(), db: Session = Depends(get_db)):
     #Get the users information
     user = db.query(users).filter(users.username == username).first()
     if user:
@@ -95,7 +95,27 @@ def logout(session:str = Body(), db: Session = Depends(get_db)):
 #Budget
 @app.post("/createBudget")
 def create_budget(token: str = Body(), budgetName: str = Body(), members: List[int] = Body(), db: Session = Depends(get_db)):
-    pass
+    token_valid = db.query(sessionLog).filter(sessionLog.session_key == token).first()
+    if token_valid:
+        creator = db.query(users).filter(users.userID == token_valid.user).first()
+        if budgetName and creator:
+            newbudget = budgets()
+            newbudget.budgetName = budgetName
+            # newbudget.creator = creator.userID
+            newbudget.created = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
+            newbudget.lastUpdated = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
+            newbudget.items = []
+            
+            db.add(newbudget)
+            db.commit()
+            
+            return "Budget has been created"
+        else:
+            if not budgetName:
+                return "Budgets can be unnamed!"
+            return "Something went wrong. Try again"
+    else:
+        return "Valid token not found!"
 
 @app.delete("/deleteBudget")
 def remove_budget(token: str = Body(),budgetID: int = Header(), db: Session = Depends(get_db)):
