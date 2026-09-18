@@ -4,6 +4,7 @@ import logging
 from DBConn import *
 from security import *
 from datetime import datetime, timedelta
+from typing import List
 
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import Depends, FastAPI, HTTPException, Body, Header
@@ -39,6 +40,7 @@ app.add_middleware(
     expose_headers=["*"]
 )
 
+#User
 @app.post("/createUser")
 def create_user(username: str = Body(), password: str = Body(), db: Session = Depends(get_db)):
     checkuser = db.query(users).filter(users.username == username).first()
@@ -90,6 +92,25 @@ def logout(session:str = Body(), db: Session = Depends(get_db)):
     return "Session ended"
 
 
+#Budget
 @app.post("/createBudget")
 def create_budget(budgetName: str = Body(), db: Session = Depends(get_db)):
     pass
+
+@app.delete("/deleteBudget")
+def remove_budget(budgetID: int = Header(), db: Session = Depends(get_db)):
+    pass
+
+@app.get("/getBudgetByID")
+def get_budget_by_id(budgetID: int = Body(), db: Session = Depends(get_db)):
+    pass
+
+@app.post("/addItemBudget")
+def add_item_to_budget(budgetID: int = Body(), items: List[int] = Body(), db: Session = Depends(get_db)):
+    pass
+
+@app.delete("/removeItemFromBudget")
+def remove_item_from_budget(budgetID: int = Header(), itemID: int = Header(), db: Session = Depends(get_db)):
+    pass
+
+#Item
