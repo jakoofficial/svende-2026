@@ -101,7 +101,7 @@ def create_budget(token: str = Body(), budgetName: str = Body(), members: List[i
         if budgetName and creator:
             newbudget = budgets()
             newbudget.budgetName = budgetName
-            # newbudget.creator = creator.userID
+            newbudget.creator = creator
             newbudget.created = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
             newbudget.lastUpdated = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
             newbudget.items = []
@@ -119,11 +119,25 @@ def create_budget(token: str = Body(), budgetName: str = Body(), members: List[i
 
 @app.delete("/deleteBudget")
 def remove_budget(token: str = Body(),budgetID: int = Header(), db: Session = Depends(get_db)):
-    pass
+    token_valid = db.query(sessionLog).filter(sessionLog.session_key == token).first()
+    if token_valid:
+        budget = db.query(budgets).filter(budgets.budgetID == budgetID).first()
+        if budget:
+            db.delete(budget)
+            db.commit()
+            return "Budget removed!"
+        return "No budget found!"
+    return "No valid token found"
 
 @app.get("/getBudgetByID")
-def get_budget_by_id(token: str = Body(),budgetID: int = Body(), db: Session = Depends(get_db)):
-    pass
+def get_budget_by_id(token: str = Header(), budgetID: int = Header(), db: Session = Depends(get_db)):
+    token_valid = db.query(sessionLog).filter(sessionLog.session_key == token).first()
+    if token_valid:
+        budget = db.query(budgets).filter(budgets.budgetID == budgetID).first()
+        if budget:
+            return budget
+        return "No budget found"
+    return "no valid token found"
 
 @app.post("/addItemBudget")
 def add_item_to_budget(token: str = Body(),budgetID: int = Body(), items: List[int] = Body(), db: Session = Depends(get_db)):
