@@ -25,13 +25,20 @@ class budgets(Base):
     creator: Mapped["users"] = relationship(back_populates="budgets")
     created: Mapped[str] = mapped_column(String(60), nullable=False)
     lastUpdated: Mapped[str] = mapped_column(String(60), nullable=False)
-    items: Mapped[list["budgetItems"]] = relationship(back_populates="budget")
+    items: Mapped[list["budgetItems"]] = relationship(secondary="ItemToBudgets", back_populates="budget")
+    groupID: Mapped[int] = mapped_column(ForeignKey("BudgetGroups.groupID"), nullable=True)
+    group: Mapped["groups"] = relationship()
+
+class itemsToBudgets(Base):
+    __tablename__ = "ItemToBudgets"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    itemID: Mapped[int] = mapped_column(ForeignKey("BudgetItems.itemID"))
+    budgetID: Mapped[int] = mapped_column(ForeignKey("Budgets.budgetID"))
 
 class budgetItems(Base):
     __tablename__ = "BudgetItems"
     itemID: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    budgetID: Mapped[int] = mapped_column(ForeignKey("Budgets.budgetID"))
-    budget: Mapped[budgets] = relationship(back_populates="items")
+    budget: Mapped[list["budgets"]] = relationship(secondary="ItemToBudgets", back_populates="items")
     itemName: Mapped[str] = mapped_column(String(60), nullable=False)
     itemValue: Mapped[float] = mapped_column(Float, nullable=False)
     itemDescription: Mapped[str] = mapped_column(String(120), nullable=False)

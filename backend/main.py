@@ -1,6 +1,8 @@
 from contextlib import asynccontextmanager
 import logging
 
+from sqlalchemy import select
+
 from DBConn import *
 from security import *
 from datetime import datetime, timedelta
@@ -141,34 +143,59 @@ def get_budget_by_id(token: str = Header(), budgetID: int = Header(), db: Sessio
 
 @app.post("/addItemBudget")
 def add_item_to_budget(token: str = Body(),budgetID: int = Body(), items: List[int] = Body(), db: Session = Depends(get_db)):
-    pass
+    token_valid = db.query(sessionLog).filter(sessionLog.session_key == token).first()
+    if token_valid:
+        budget = db.query(budgets).filter(budgets.budgetID == budgetID).first()
+        if budget:
+            itemList = db.scalars(select(budgetItems).where(budgetItems.itemID.in_(items))).all()
+            budget.items.extend(itemList)
+            
+            db.commit()
+            db.refresh(budget)
+            return budget.items
+        return "No budget found"
+    return "no token"
 
 @app.delete("/removeItemFromBudget")
 def remove_item_from_budget(token: str = Body(),budgetID: int = Header(), itemID: int = Header(), db: Session = Depends(get_db)):
+    token_valid = db.query(sessionLog).filter(sessionLog.session_key == token).first()
     pass
 
 #Group
 @app.post("/createGroup")
 def create_group(token: str = Body(),groupname: str = Body(), members: List[int] = Body(), db: Session = Depends(get_db)):
+    token_valid = db.query(sessionLog).filter(sessionLog.session_key == token).first()
     pass
 
 @app.put("/updateGroup")
 def update_group(token: str = Body(),groupID: int = Body(), members: List[int] = Body(), db: Session = Depends(get_db)):
+    token_valid = db.query(sessionLog).filter(sessionLog.session_key == token).first()
     pass
 
 @app.delete("/removeGroup")
 def remove_group(token: str = Body(),groupID: int = Header(), db: Session = Depends(get_db)):
-    pass
+    token_valid = db.query(sessionLog).filter(sessionLog.session_key == token).first()
+    if token_valid:
+        group_check = db.query(groups).filter(groups.groupID == groupID).first()
+        if group_check:
+            db.delete(group_check)
+            db.commit()
+            return "Group removed"
+        return "No group was found"
+    return "No valid token"
 
 #Item
 @app.post("/createItem")
 def create_item(token: str = Body(),itemName: str = Body(), itemDesc: str = Body(), itemPrice: float = Body(), dateAdded: str = Body(), db: Session = Depends(get_db)):
+    token_valid = db.query(sessionLog).filter(sessionLog.session_key == token).first()
     pass
 
 @app.put("/updateItem")
 def update_item(token: str = Body(),itemName: str = Body(), itemDesc: str = Body(), itemPrice: float = Body(), db: Session = Depends(get_db)):
+    token_valid = db.query(sessionLog).filter(sessionLog.session_key == token).first()
     pass
 
 @app.delete("/removeItem")
 def remove_item(token: str = Body(),itemID: int = Header(), db: Session = Depends(get_db)):
+    token_valid = db.query(sessionLog).filter(sessionLog.session_key == token).first()
     pass
