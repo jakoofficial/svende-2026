@@ -15,6 +15,7 @@ class users(Base):
     username: Mapped[str] = mapped_column(String(60))
     password: Mapped[str] = mapped_column(String(255))
     budgets: Mapped[list["budgets"]] = relationship(back_populates="creator")
+    groups: Mapped[list["groups"]] = relationship(secondary="UserGroups", back_populates="userList")
 
 class budgets(Base):
     __tablename__ = "Budgets"
@@ -46,13 +47,14 @@ class budgetItems(Base):
 class userGroups(Base):
     __tablename__ = "UserGroups"
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    group: Mapped[Integer] = mapped_column(ForeignKey("BudgetGroups.groupID"))
-    user: Mapped[Integer] = mapped_column(ForeignKey("Users.userID"))
+    group: Mapped[int] = mapped_column(ForeignKey("BudgetGroups.groupID"))
+    user: Mapped[int] = mapped_column(ForeignKey("Users.userID"))
 
 class groups(Base):
     __tablename__ = "BudgetGroups"
     groupID: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     groupName: Mapped[str] = mapped_column(String(60), nullable=False)
+    userList: Mapped[list["users"]] = relationship(secondary="UserGroups", back_populates="groups")
 
 class sessionLog(Base):
     __tablename__ = "SessionLog"

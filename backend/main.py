@@ -159,18 +159,47 @@ def add_item_to_budget(token: str = Body(),budgetID: int = Body(), items: List[i
 @app.delete("/removeItemFromBudget")
 def remove_item_from_budget(token: str = Body(),budgetID: int = Header(), itemID: int = Header(), db: Session = Depends(get_db)):
     token_valid = db.query(sessionLog).filter(sessionLog.session_key == token).first()
-    pass
+    if token_valid:
+        item = db.query(budgetItems).filter(budgetItems.itemID == itemID).first()
+        b = db.query(budgets).filter(budgets.budgetID == budgetID).first()
+        if item and b:
+            item.budget.remove(b)
+            db.commit()
+            return "Item removed from group"
+        return "Item or Budget wasnt found"
+    return "No valid token"
 
 #Group
 @app.post("/createGroup")
 def create_group(token: str = Body(),groupname: str = Body(), members: List[int] = Body(), db: Session = Depends(get_db)):
     token_valid = db.query(sessionLog).filter(sessionLog.session_key == token).first()
-    pass
+    if token_valid:
+        group = db.query(groups).filter(groups.groupName == groupname).first()
+        if not group:
+            newgroup = groups()
+            newgroup.groupName = groupname
+            userList = db.scalars(select(users).where(users.userID.in_(members))).all()
+            newgroup.userList.extend(userList)
+            db.add(newgroup)
+            db.commit()
+            db.refresh(newgroup)
+            return "Group has been created"
+        return "Group with that name already exists"
+    return "No valid token"
 
 @app.put("/updateGroup")
 def update_group(token: str = Body(),groupID: int = Body(), members: List[int] = Body(), db: Session = Depends(get_db)):
     token_valid = db.query(sessionLog).filter(sessionLog.session_key == token).first()
-    pass
+    if token_valid:
+        group = db.query(groups).filter(groups.groupID == groupID).first()
+        if group:
+            userList = db.scalars(select(users).where(users.userID.in_(members))).all()
+            group.userList.extend(userList)
+            db.commit()
+            db.refresh(group)
+            return "Group has been updated"
+        return "Group wasn't found"
+    return "No valid token"
 
 @app.delete("/removeGroup")
 def remove_group(token: str = Body(),groupID: int = Header(), db: Session = Depends(get_db)):
@@ -222,4 +251,11 @@ def update_item(token: str = Body(), itemID: int = Body(), itemName: str = Body(
 @app.delete("/removeItem")
 def remove_item(token: str = Body(),itemID: int = Header(), db: Session = Depends(get_db)):
     token_valid = db.query(sessionLog).filter(sessionLog.session_key == token).first()
-    pass
+    if token_valid:
+        item = db.query(budgetItems).filter(budgetItems.itemID == itemID).first()
+        if item:
+            db.delete(item)
+            db.commit()
+            return "Item has been removed"
+        return "No item found"
+    return "No valid token"
