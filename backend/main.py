@@ -186,14 +186,38 @@ def remove_group(token: str = Body(),groupID: int = Header(), db: Session = Depe
 
 #Item
 @app.post("/createItem")
-def create_item(token: str = Body(),itemName: str = Body(), itemDesc: str = Body(), itemPrice: float = Body(), dateAdded: str = Body(), db: Session = Depends(get_db)):
+def create_item(token: str = Body(),itemName: str = Body(), itemDesc: str = Body(), itemPrice: float = Body(), db: Session = Depends(get_db)):
     token_valid = db.query(sessionLog).filter(sessionLog.session_key == token).first()
-    pass
+    if token_valid:
+        checkitem = db.query(budgetItems).filter(budgetItems.itemName == itemName).first()
+        if not checkitem:
+            newItem = budgetItems()
+            newItem.itemName = itemName
+            newItem.itemDescription = itemDesc
+            newItem.itemValue = itemPrice
+            if newItem.itemName and newItem.itemValue: 
+                db.add(newItem)
+                db.commit()
+                db.refresh(newItem)
+                return [newItem.itemID, newItem.itemName]
+            return "Items need and name and price!"
+        return "An item with this name already exists"
+    return "No token"
+        
 
 @app.put("/updateItem")
-def update_item(token: str = Body(),itemName: str = Body(), itemDesc: str = Body(), itemPrice: float = Body(), db: Session = Depends(get_db)):
+def update_item(token: str = Body(), itemID: int = Body(), itemName: str = Body(), itemDesc: str = Body(), itemPrice: float = Body(), db: Session = Depends(get_db)):
     token_valid = db.query(sessionLog).filter(sessionLog.session_key == token).first()
-    pass
+    if token_valid:
+        itemforUpdate = db.query(budgetItems).filter(budgetItems.itemID == itemID).first()
+        if itemforUpdate and itemName and itemPrice:
+            itemforUpdate.itemName = itemName
+            itemforUpdate.itemValue = itemPrice
+            itemforUpdate.itemDescription = itemDesc
+            db.commit()
+            return "Item has been updated"
+        return "Something went wrong, try again"
+    return "no valid token"
 
 @app.delete("/removeItem")
 def remove_item(token: str = Body(),itemID: int = Header(), db: Session = Depends(get_db)):
