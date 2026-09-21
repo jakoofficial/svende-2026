@@ -1,5 +1,5 @@
 const deploy_connection = "api.tracky.boldbyte.dev/";
-const dev_connection = "api.tracky.boldbyte.dev/";
+const dev_connection = "https://api.tracky.boldbyte.dev/";
 
 async function user_signin(username, password) {
   try {
