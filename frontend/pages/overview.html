@@ -111,6 +111,21 @@
   }
   setItemList();
 
+  $("#itemcreatebtn").click(function () {
+    const itemName = $("#create_name_item").val();
+    const itemPrice = $("#create_price_item").val();
+    const itemDesc = $("#create_desc_item").val();
+
+    if (itemName && itemDesc && itemPrice) {
+      create_item(itemName, itemDesc, itemPrice)
+        .then((result) => console.log("Success:", result))
+        .catch((error) => console.error("Failed:", error));
+    } else {
+      $("#form-error").removeClass("noError")
+      $("#form-error").text("Please fill all fields")
+    }
+  });
+
   $(document).ready(function () {
     setGraphs();
     show(0);
@@ -155,14 +170,14 @@
       <div id="item-form" class="hide">
         <div id="form">
           <div>
-            <input type="text" placeholder="Item Name" />
+            <input id="create_name_item" type="text" placeholder="Item Name" />
             <span></span>
-            <input type="number" placeholder="Item Price" min="1" />
+            <input id="create_price_item" type="number" placeholder="Item Price" min="1" />
           </div>
           <textarea
             placeholder="Description"
             name="itemdescription"
-            id=""
+            id="create_desc_item"
           ></textarea>
           <p id="form-error" class="noError">Error</p>
           <div>
