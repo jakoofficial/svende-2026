@@ -9,11 +9,6 @@
       document.getElementById("register-form").classList.remove("CloseForm");
     }
   }
-  $("#login_btn").click(function () {
-    window.sessionStorage.setItem("sessionToken", "TesterToken");
-    GotoPage("overview.html");
-    $(window).trigger($.Event("headerUpdate"));
-  });
   //Login
   document.getElementById("gotoRegister").addEventListener("click", () => {
     Goto("register");
@@ -21,6 +16,39 @@
   //Register
   document.getElementById("gotoLogin").addEventListener("click", () => {
     Goto("login");
+  });
+
+  $("#create_account").click(function () {
+    const username = $("#username_reg").val();
+    const password = $("#password_reg").val();
+    const passwordAgain = $("#password_again_reg").val();
+
+    if (username && password && password === passwordAgain) {
+      create_user(username, password)
+        .then((result) => console.log("Success:", result))
+        .catch((error) => console.error("Failed:", error));
+    } else {
+      alert("Please fill all fields and ensure passwords match!");
+    }
+  });
+  $("#login_btn").click(async function () {
+    const username = $("#username_login").val();
+    const password = $("#password_login").val();
+
+    if (username && password) {
+      try {
+        const data = await user_signin(username, password);
+        if (data[1].length > 5){
+          window.sessionStorage.setItem("sessionToken", data[1]);
+          GotoPage("overview.html");
+          $(window).trigger($.Event("headerUpdate"));
+        }
+      } catch (error) {
+        alert("Login failed: " + error.message);
+      }
+    } else {
+      alert("Please fill all fields and ensure passwords match!");
+    }
   });
 </script>
 
@@ -30,11 +58,11 @@
     <div id="form-inputs">
       <div>
         <p>Username</p>
-        <input type="text" />
+        <input id="username_login" type="text" />
       </div>
       <div>
         <p>Password</p>
-        <input type="password" />
+        <input id="password_login" type="password" />
       </div>
     </div>
     <button id="login_btn">Log in</button>
@@ -45,15 +73,15 @@
       <h1>Register</h1>
       <div>
         <p>Username</p>
-        <input type="text" />
+        <input id="username_reg" type="text" />
       </div>
       <div>
         <p>Password</p>
-        <input type="password" />
+        <input id="password_reg" type="password" />
       </div>
       <div>
         <p>Confirm password</p>
-        <input type="password" />
+        <input id="password_again_reg" type="password" />
       </div>
     </div>
     <button id="create_account">Create account</button>
