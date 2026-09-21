@@ -1,6 +1,6 @@
 {
     "documentName": "ER diagram svende 2026",
-    "lastUpdatedAt": "2026-09-17T06:41:58.633Z",
+    "lastUpdatedAt": "2026-09-21T08:20:28.278Z",
     "tableViewModels": [
         {
             "tableModel": {
@@ -40,8 +40,8 @@
                     "583741f7-a57f-4907-9ae6-e44dff3ab644"
                 ]
             },
-            "top": -121.74999999999999,
-            "left": -1171.5900000000001,
+            "top": 101.41000000000004,
+            "left": -1160.4300000000003,
             "headerBackgroundColor": {
                 "red": 189,
                 "green": 189,
@@ -156,10 +156,39 @@
                 "blue": 0
             },
             "createdAt": "2026-09-17T06:41:58.632Z"
+        },
+        {
+            "tableModel": {
+                "tableModelId": "37654381-5bdd-4d73-b289-ed1a76188c27",
+                "physicalName": "ItemsToBudgets",
+                "logicalName": "ItemsToBudgets",
+                "columnModelIds": [
+                    "7c91e461-c680-4a04-885c-8327296a34b8",
+                    "03a238b8-7b39-417a-8e93-7ff9b9efec80",
+                    "88a0a65a-b6f3-4ca9-8d22-8dfbc3c10b31"
+                ]
+            },
+            "top": -115.94999999999999,
+            "left": -1056.1,
+            "headerBackgroundColor": {
+                "red": 227,
+                "green": 242,
+                "blue": 253
+            },
+            "headerForegroundColor": {
+                "red": 0,
+                "green": 0,
+                "blue": 0
+            },
+            "createdAt": "2026-09-21T08:18:19.140Z"
         }
     ],
     "columnGroupModels": [],
     "columnModels": [
+        {
+            "columnModelId": "03a238b8-7b39-417a-8e93-7ff9b9efec80",
+            "columnShareModelId": "6d754657-ac95-4f26-aeb9-4961584da348"
+        },
         {
             "columnModelId": "101e67e0-1a6a-4344-a381-f9f25a687743",
             "columnShareModelId": "9e329c89-4193-443f-bbd9-2e1e05f5b364",
@@ -230,9 +259,19 @@
             "notNull": true
         },
         {
+            "columnModelId": "7c91e461-c680-4a04-885c-8327296a34b8",
+            "columnShareModelId": "61624fb4-c9c3-4512-93ce-c1c6eee9cd8d",
+            "primaryKey": true,
+            "notNull": true
+        },
+        {
             "columnModelId": "8865ebaf-e317-457c-8275-a5866e453586",
             "columnShareModelId": "36a0f164-0a35-44dd-b66f-e3818cc9e2a3",
             "notNull": true
+        },
+        {
+            "columnModelId": "88a0a65a-b6f3-4ca9-8d22-8dfbc3c10b31",
+            "columnShareModelId": "77bcb3b8-23a4-4fe3-b109-4e3243ff81c2"
         },
         {
             "columnModelId": "899f97be-7e97-4e48-9ca1-f51f610ea10f",
@@ -307,6 +346,13 @@
             "createdAt": "2026-09-07T08:16:55.607Z"
         },
         {
+            "columnShareModelId": "77bcb3b8-23a4-4fe3-b109-4e3243ff81c2",
+            "physicalName": "budgetID",
+            "logicalName": "budgetID",
+            "columnTypeId": 15,
+            "createdAt": "2026-09-21T08:18:17.825Z"
+        },
+        {
             "columnShareModelId": "1d6e4cf7-cd49-433a-a718-c573c27555c4",
             "physicalName": "budgetName",
             "logicalName": "budgetName",
@@ -363,6 +409,13 @@
             "createdAt": "2026-09-07T08:20:03.276Z"
         },
         {
+            "columnShareModelId": "61624fb4-c9c3-4512-93ce-c1c6eee9cd8d",
+            "physicalName": "id",
+            "logicalName": "id",
+            "columnTypeId": 15,
+            "createdAt": "2026-09-21T08:17:47.840Z"
+        },
+        {
             "columnShareModelId": "9e329c89-4193-443f-bbd9-2e1e05f5b364",
             "physicalName": "id",
             "logicalName": "id",
@@ -375,6 +428,13 @@
             "logicalName": "itemDescription",
             "columnTypeId": 322,
             "createdAt": "2026-09-07T10:19:49.947Z"
+        },
+        {
+            "columnShareModelId": "6d754657-ac95-4f26-aeb9-4961584da348",
+            "physicalName": "itemID",
+            "logicalName": "itemID",
+            "columnTypeId": 15,
+            "createdAt": "2026-09-21T08:18:08.733Z"
         },
         {
             "columnShareModelId": "93dc58ab-9c3a-4129-8c55-43bf0c6cd1f5",
@@ -457,16 +517,15 @@
     "relationViewModels": [
         {
             "relationModel": {
-                "relationModelId": "2f796bcf-605e-4607-8a83-d636b768b979",
-                "relationName": "budget",
-                "parentTableModelId": "f5d063c4-95f5-4f32-9bf5-a8c9ff7a68d9",
+                "relationModelId": "1bda6f77-9d43-4b4b-aa75-85fa725977b0",
+                "parentTableModelId": "d88f7cb9-e252-41b9-981e-fd54e5030680",
                 "parentCardinality": "1",
-                "childTableModelId": "d88f7cb9-e252-41b9-981e-fd54e5030680",
+                "childTableModelId": "37654381-5bdd-4d73-b289-ed1a76188c27",
                 "childCardinality": "1",
                 "relationPairs": [
                     {
-                        "parentColumnModelId": "139811b7-cf1f-4e0d-b7dc-16cd6ebebaad",
-                        "childColumnModelId": "8865ebaf-e317-457c-8275-a5866e453586"
+                        "parentColumnModelId": "dbb7749e-9174-42ee-9d01-5bcab460a401",
+                        "childColumnModelId": "03a238b8-7b39-417a-8e93-7ff9b9efec80"
                     }
                 ],
                 "onUpdateAction": "RESTRICT",
@@ -478,15 +537,15 @@
                 "orthogonalLines": [
                     {
                         "direction": "horizontal",
-                        "position": -307.1
+                        "position": 159.46
                     },
                     {
                         "direction": "vertical",
-                        "position": -1220.21
+                        "position": -1213.23
                     },
                     {
                         "direction": "horizontal",
-                        "position": -39.02
+                        "position": -24.65
                     }
                 ],
                 "color": {
@@ -495,27 +554,7 @@
                     "blue": 0
                 }
             },
-            "labelViewModel": {
-                "label": "budget",
-                "position": {
-                    "segment": -1,
-                    "fraction": 0,
-                    "offsetX": 0,
-                    "offsetY": 0
-                },
-                "color": {
-                    "red": 0,
-                    "green": 0,
-                    "blue": 0
-                },
-                "style": {
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "fontSize": 10
-                }
-            },
-            "createdAt": "2026-09-07T08:25:11.883Z"
+            "createdAt": "2026-09-21T08:19:11.932Z"
         },
         {
             "relationModel": {
@@ -643,6 +682,47 @@
         },
         {
             "relationModel": {
+                "relationModelId": "78558808-11ff-4669-8067-f5ea7c6848eb",
+                "parentTableModelId": "f5d063c4-95f5-4f32-9bf5-a8c9ff7a68d9",
+                "parentCardinality": "1",
+                "childTableModelId": "37654381-5bdd-4d73-b289-ed1a76188c27",
+                "childCardinality": "1",
+                "relationPairs": [
+                    {
+                        "parentColumnModelId": "139811b7-cf1f-4e0d-b7dc-16cd6ebebaad",
+                        "childColumnModelId": "88a0a65a-b6f3-4ca9-8d22-8dfbc3c10b31"
+                    }
+                ],
+                "onUpdateAction": "RESTRICT",
+                "onDeleteAction": "RESTRICT"
+            },
+            "lineViewModel": {
+                "strokeWidth": 1,
+                "edges": [],
+                "orthogonalLines": [
+                    {
+                        "direction": "horizontal",
+                        "position": -304.99
+                    },
+                    {
+                        "direction": "vertical",
+                        "position": -1190.92
+                    },
+                    {
+                        "direction": "horizontal",
+                        "position": 0.46
+                    }
+                ],
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                }
+            },
+            "createdAt": "2026-09-21T08:19:02.772Z"
+        },
+        {
+            "relationModel": {
                 "relationModelId": "9c8893f8-96fc-4013-a29f-1ca5f860f44b",
                 "relationName": "user_group",
                 "parentTableModelId": "56f4beb4-4312-49e5-a607-601059a6178d",
@@ -730,7 +810,7 @@
                     },
                     {
                         "direction": "vertical",
-                        "position": -179.76
+                        "position": -157.41
                     },
                     {
                         "direction": "horizontal",
