@@ -1,6 +1,6 @@
 {
     "documentName": "ER diagram svende 2026",
-    "lastUpdatedAt": "2026-09-21T08:20:28.278Z",
+    "lastUpdatedAt": "2026-09-23T10:07:23.155Z",
     "tableViewModels": [
         {
             "tableModel": {
@@ -25,7 +25,7 @@
                 "green": 0,
                 "blue": 0
             },
-            "createdAt": "2026-09-07T08:14:36.344Z"
+            "createdAt": "2026-09-23T09:57:59.929Z"
         },
         {
             "tableModel": {
@@ -34,7 +34,6 @@
                 "logicalName": "BudgetItems",
                 "columnModelIds": [
                     "dbb7749e-9174-42ee-9d01-5bcab460a401",
-                    "8865ebaf-e317-457c-8275-a5866e453586",
                     "5ab01525-f005-4cae-b731-7958faf188a9",
                     "b63b2826-ce06-4420-b359-2b418086d403",
                     "583741f7-a57f-4907-9ae6-e44dff3ab644"
@@ -52,7 +51,7 @@
                 "green": 0,
                 "blue": 0
             },
-            "createdAt": "2026-09-07T10:19:51.501Z"
+            "createdAt": "2026-09-23T10:07:23.155Z"
         },
         {
             "tableModel": {
@@ -79,7 +78,7 @@
                 "green": 0,
                 "blue": 0
             },
-            "createdAt": "2026-09-07T08:16:14.405Z"
+            "createdAt": "2026-09-23T09:57:37.688Z"
         },
         {
             "tableModel": {
@@ -103,7 +102,7 @@
                 "green": 0,
                 "blue": 0
             },
-            "createdAt": "2026-09-07T08:20:18.588Z"
+            "createdAt": "2026-09-23T09:44:57.973Z"
         },
         {
             "tableModel": {
@@ -155,7 +154,7 @@
                 "green": 0,
                 "blue": 0
             },
-            "createdAt": "2026-09-17T06:41:58.632Z"
+            "createdAt": "2026-09-23T09:44:00.122Z"
         },
         {
             "tableModel": {
@@ -265,11 +264,6 @@
             "notNull": true
         },
         {
-            "columnModelId": "8865ebaf-e317-457c-8275-a5866e453586",
-            "columnShareModelId": "36a0f164-0a35-44dd-b66f-e3818cc9e2a3",
-            "notNull": true
-        },
-        {
             "columnModelId": "88a0a65a-b6f3-4ca9-8d22-8dfbc3c10b31",
             "columnShareModelId": "77bcb3b8-23a4-4fe3-b109-4e3243ff81c2"
         },
@@ -339,13 +333,6 @@
             "createdAt": "2026-09-07T07:30:26.357Z"
         },
         {
-            "columnShareModelId": "36a0f164-0a35-44dd-b66f-e3818cc9e2a3",
-            "physicalName": "budgetID",
-            "logicalName": "budgetID",
-            "columnTypeId": 15,
-            "createdAt": "2026-09-07T08:16:55.607Z"
-        },
-        {
             "columnShareModelId": "77bcb3b8-23a4-4fe3-b109-4e3243ff81c2",
             "physicalName": "budgetID",
             "logicalName": "budgetID",
@@ -356,22 +343,25 @@
             "columnShareModelId": "1d6e4cf7-cd49-433a-a718-c573c27555c4",
             "physicalName": "budgetName",
             "logicalName": "budgetName",
-            "columnTypeId": 322,
-            "createdAt": "2026-09-07T08:15:04.389Z"
+            "columnTypeId": 312,
+            "precision": "60",
+            "createdAt": "2026-09-23T09:57:36.425Z"
         },
         {
             "columnShareModelId": "2f92054f-489b-41c6-9097-8f106ce3c44d",
             "physicalName": "created",
             "logicalName": "created",
-            "columnTypeId": 112,
-            "createdAt": "2026-09-07T08:21:48.032Z"
+            "columnTypeId": 312,
+            "precision": "32",
+            "createdAt": "2026-09-23T09:43:40.593Z"
         },
         {
             "columnShareModelId": "d04633e1-e3a1-478b-a082-825f9cd9f281",
             "physicalName": "created",
             "logicalName": "created",
-            "columnTypeId": 112,
-            "createdAt": "2026-09-07T08:15:57.198Z"
+            "columnTypeId": 312,
+            "precision": "60",
+            "createdAt": "2026-09-23T09:57:26.240Z"
         },
         {
             "columnShareModelId": "da00b566-5949-449b-8202-6df79af49ec1",
@@ -384,8 +374,9 @@
             "columnShareModelId": "bdcb2c1b-73e2-410b-97fd-84fe52f67ffe",
             "physicalName": "ends",
             "logicalName": "ends",
-            "columnTypeId": 112,
-            "createdAt": "2026-09-07T08:21:58.836Z"
+            "columnTypeId": 312,
+            "precision": "32",
+            "createdAt": "2026-09-23T09:43:47.042Z"
         },
         {
             "columnShareModelId": "0cb23952-ecc4-4406-a43a-6f6cdd69a8a0",
@@ -405,8 +396,9 @@
             "columnShareModelId": "632a92d6-d69c-479f-80e7-d1c917770e2e",
             "physicalName": "groupName",
             "logicalName": "groupName",
-            "columnTypeId": 322,
-            "createdAt": "2026-09-07T08:20:03.276Z"
+            "columnTypeId": 312,
+            "precision": "60",
+            "createdAt": "2026-09-23T09:44:56.556Z"
         },
         {
             "columnShareModelId": "61624fb4-c9c3-4512-93ce-c1c6eee9cd8d",
@@ -426,8 +418,9 @@
             "columnShareModelId": "bc964cb8-f865-4090-a6f5-b71877e5fd51",
             "physicalName": "itemDescription",
             "logicalName": "itemDescription",
-            "columnTypeId": 322,
-            "createdAt": "2026-09-07T10:19:49.947Z"
+            "columnTypeId": 312,
+            "precision": "120",
+            "createdAt": "2026-09-23T09:45:21.767Z"
         },
         {
             "columnShareModelId": "6d754657-ac95-4f26-aeb9-4961584da348",
@@ -447,8 +440,9 @@
             "columnShareModelId": "c84a712d-c375-493f-8431-54b8043063e9",
             "physicalName": "itemName",
             "logicalName": "itemName",
-            "columnTypeId": 322,
-            "createdAt": "2026-09-07T08:17:56.430Z"
+            "columnTypeId": 312,
+            "precision": "60",
+            "createdAt": "2026-09-23T09:45:35.382Z"
         },
         {
             "columnShareModelId": "93406d77-e711-4e50-89af-7ba87a8edf5b",
@@ -461,22 +455,25 @@
             "columnShareModelId": "904211d0-df69-462f-abad-11833396a957",
             "physicalName": "lastUpdated",
             "logicalName": "lastUpdated",
-            "columnTypeId": 112,
-            "createdAt": "2026-09-07T08:16:10.343Z"
+            "columnTypeId": 312,
+            "precision": "60",
+            "createdAt": "2026-09-23T09:57:21.106Z"
         },
         {
             "columnShareModelId": "90320c5a-2cb8-43f3-8cf9-797e15e4fc45",
             "physicalName": "password",
             "logicalName": "password",
-            "columnTypeId": 322,
-            "createdAt": "2026-09-07T07:37:00.594Z"
+            "columnTypeId": 312,
+            "precision": "225",
+            "createdAt": "2026-09-23T09:57:57.747Z"
         },
         {
             "columnShareModelId": "cb2a886d-81e3-4506-aada-d38c01203416",
             "physicalName": "session_key",
             "logicalName": "session_key",
-            "columnTypeId": 322,
-            "createdAt": "2026-09-17T06:41:49.419Z"
+            "columnTypeId": 312,
+            "precision": "32",
+            "createdAt": "2026-09-23T09:43:56.419Z"
         },
         {
             "columnShareModelId": "f81c80d9-1de9-4070-8bdd-9011f68b6517",
@@ -510,8 +507,9 @@
             "columnShareModelId": "b2a84c45-be22-4bd1-8048-eed9421ab332",
             "physicalName": "username",
             "logicalName": "username",
-            "columnTypeId": 322,
-            "createdAt": "2026-09-07T07:25:53.201Z"
+            "columnTypeId": 312,
+            "precision": "60",
+            "createdAt": "2026-09-23T09:57:51.103Z"
         }
     ],
     "relationViewModels": [

@@ -29,36 +29,16 @@
     new Chart(Monthctx, {
       type: "line",
       data: {
-        labels: [
-          "January",
-          "Feburary",
-          "March",
-          "April",
-          "May",
-          "July",
-          "June",
-        ],
+        labels: ["January","Feburary","March","April","May","July","June",],
         datasets: [
-          {
-            label: "Monthly usage",
-            data: [120, 190, 300, 150, 210, 250],
-            borderWidth: 1,
-          },
-          {
-            label: "Allocated",
-            data: [200, 200, 200, 200, 200, 200],
-            borderWidth: 2,
-          },
-        ],
-      },
+          {label: "Monthly usage", data: [120, 190, 300, 150, 210, 250], borderWidth: 1,},
+          {label: "Allocated", data: [200, 200, 200, 200, 200, 200], borderWidth: 2,},
+        ],},
       options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-        },
+        scales:{ y: {beginAtZero: true,},},
       },
     });
+
     new Chart(Weekctx, {
       type: "line",
       data: {
